@@ -1,0 +1,12 @@
+body {
+  color:                 #f1f1f1;
+  font-family:           'Helvetica Neue', sans-serif;
+  font-weight:           300;
+  padding-bottom:        100px;
+  background-color:      #414e60 20%;
+  background-image:      radial-gradient(farthest-side ellipse at 10% 0, #414e60 20%, #94a3b1);
+  background-image:      -webkit-radial-gradient(10% 0, farthest-side ellipse, #414e60 20%, #94a3b1);
+  background-image:      -moz-radial-gradient(10% 0, farthest-side ellipse, #414e60 20%, #94a3b1);
+  background-size:       cover;
+  background-attachment: fixed, fixed;
+}
