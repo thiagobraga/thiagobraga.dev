@@ -3,10 +3,11 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  color:       #fff;
+  font-size:   28px;
+  font-weight: 400;
+  height:      150px;
+  padding:     20px;
 }
 
 .App-title {
