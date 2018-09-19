@@ -4,7 +4,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">Thiago Braga</div>
+      <div className="App-header">Thiago Braga</div>
     );
   }
 }
