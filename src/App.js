@@ -4,18 +4,18 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div class="App">
-        <div class="App-header">
-          <nav class="navbar">
-            <div class="container">
+      <div className="App">
+        <div className="App-header">
+          <nav className="navbar">
+            <div className="container">
               <a href="/">Thiago Braga</a>
             </div>
           </nav>
         </div>
 
-        <div class="App-body">
-          <div class="container">
-            <p class="text-justify">
+        <div className="App-body">
+          <div className="container">
+            <p className="text-justify">
               <b>Oi, sou Thiago Braga.</b> Sou um desenvolvedor full stack
               focado em PHP, JavaScript e CSS, e também um entusiasta da cultura DevOps.
               Também sou apaixonado por música e guitarrista
@@ -24,7 +24,7 @@ class App extends Component {
 
             <p>O que tenho feito ultimamente (ou tentado):</p>
 
-            <ul class="small">
+            <ul className="small">
               <li>Finalizar o EP <b>Estrada Perdida</b> da banda Revel</li>
               <li>Organizar uma tour de 10 anos da banda Sociopata</li>
               <li>Ah... também tenho alguns vídeos da Sociopata para terminar no Adobe Premiere</li>
@@ -38,8 +38,8 @@ class App extends Component {
           </div>
         </div>
 
-        <div class="App-footer">
-          <div class="container">
+        <div className="App-footer">
+          <div className="container">
             Não utilizo redes sociais. Sou anti-social. <b>Não me procure.</b>
           </div>
         </div>
