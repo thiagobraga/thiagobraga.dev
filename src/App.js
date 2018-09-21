@@ -16,8 +16,10 @@ class App extends Component {
         <div class="App-body">
           <div class="container">
             <p class="text-justify">
-              <b>Oi, sou Thiago Braga.</b> Sou um desenvolvedor full stack focado em PHP, JavaScript e CSS, e também um entusiasta da cultura DevOps.
-              Também sou apaixonado por música e guitarrista nas bandas <a href="https://sociopata.org" target="_blank">Sociopata</a>, <a href="https://revelhc.com" target="_blank">Revel</a> e <a href="https://escapefromtheworld.com" target="_blank">Escape from the World</a>.
+              <b>Oi, sou Thiago Braga.</b> Sou um desenvolvedor full stack
+              focado em PHP, JavaScript e CSS, e também um entusiasta da cultura DevOps.
+              Também sou apaixonado por música e guitarrista
+              nas bandas <a href="https://open.spotify.com/artist/4jThTw7lss5OnXBzwXYFSD" target="_blank" rel="noopener noreferrer">Sociopata</a>, <a href="https://open.spotify.com/artist/6mDkruhCYigOgLPIH9JJ0K" target="_blank" rel="noopener noreferrer">Revel</a> e <a href="https://escapefromtheworld.bandcamp.com/" target="_blank" rel="noopener noreferrer">Escape from the World</a>.
             </p>
 
             <p>O que tenho feito ultimamente (ou tentado):</p>
