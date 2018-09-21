@@ -40,7 +40,7 @@ class App extends Component {
 
         <div className="App-footer">
           <div className="container">
-            Não utilizo redes sociais. Sou anti-social. <b>Não me procure.</b>
+            Thiago Braga
           </div>
         </div>
       </div>
