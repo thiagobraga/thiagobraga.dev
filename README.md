@@ -1,3 +1,3 @@
 # thiagobraga.org
 
-My personal site.
+My personal site. Developed with React, still in starter phase.
