@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Navbar = styled.div`
+  background-color: #80848B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const Container = styled.div`
+  background-color: #80848B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const Title = styled.p`
+  color: #f1f1f1;
+  font-size: 32px;
+  text-align: center;
+  margin: 0;
+`;
+
+const Span = styled.span`
+  font-weight: bold;
+`;
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Container>
+        <Navbar>
+          <Title>Thiago <Span>Braga</Span></Title>
+        </Navbar>
+
+        <Title>Thiago <Span>Braga</Span></Title>
+      </Container>
+    )
+  }
 }
-
-export default App;
