@@ -1,16 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const Navbar = styled.div`
-  background-color: #80848B;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
+import Navbar from './components/Navbar';
 
 const Container = styled.div`
-  background-color: #80848B;
+  background-color: #51555D;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,12 +13,13 @@ const Container = styled.div`
 const Title = styled.p`
   color: #f1f1f1;
   font-size: 32px;
+  font-weight: 300;
   text-align: center;
   margin: 0;
 `;
 
 const Span = styled.span`
-  font-weight: bold;
+  font-weight: 500;
 `;
 
 export default class App extends React.Component {
