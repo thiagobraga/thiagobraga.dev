@@ -3,18 +3,19 @@ import styled from 'styled-components'
 
 const Text = styled.p`
   color: #f1f1f1;
-  font-size: 28px;
-  font-weight: 300;
-  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
   margin: 0;
 `;
 
 const Span = styled.span`
-  font-weight: 400;
+  font-weight: 300;
 `;
 
-export default class Logo extends React.Component {
+class Logo extends React.Component {
   render() {
     return <Text>Thiago <Span>Braga</Span></Text>
   }
 }
+
+export default Logo

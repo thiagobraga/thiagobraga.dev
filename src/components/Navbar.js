@@ -8,14 +8,17 @@ const Container = styled.div`
   left: 0;
   width: 100%;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Content = styled.div`
   width: 960px;
 `;
 
-export default class Navbar extends React.Component {
+class Navbar extends React.Component {
   render() {
     return (
       <Container>
@@ -24,3 +27,5 @@ export default class Navbar extends React.Component {
     )
   }
 }
+
+export default Navbar
