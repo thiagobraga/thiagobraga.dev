@@ -1,27 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
-import Navbar from './components/Navbar';
-import Logo from './components/Logo';
+import React, { Component } from 'react'
+import Logo from './components/Logo'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import './App.css';
 
-const Container = styled.div`
-  background: #51555d url(/fog-background.png) no-repeat bottom center fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
-
-class App extends React.Component {
+class App extends Component {
   render() {
-    return (
-      <Container>
-        <Navbar>
-          <Logo />
-        </Navbar>
+    return <div className="wrapper">
+      <Navbar>
+        <a href="/"><Logo /></a>
+      </Navbar>
 
+      <section className="parallax">
         <Logo large />
-      </Container>
-    )
+      </section>
+
+      <Footer />
+    </div>
   }
 }
 

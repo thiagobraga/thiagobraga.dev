@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
+const Container = styled.nav`
   background-color: rgba(53,56,64,0.25);
   position: fixed;
   top: 0;
@@ -12,13 +12,14 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 const Content = styled.div`
   width: 960px;
 `;
 
-class Navbar extends React.Component {
+class Navbar extends Component {
   render() {
     return (
       <Container>
