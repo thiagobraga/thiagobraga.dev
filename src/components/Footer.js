@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.footer`
-  background-color: rgba(53,56,64,0.45);
+  background-color: rgb(53,56,64);
   height: 400px;
 `;
 
