@@ -1,12 +1,19 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
+  background-color: #51555d;
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 300;
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+a,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }
