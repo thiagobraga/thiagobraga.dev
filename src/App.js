@@ -1,38 +1,32 @@
 import React, { Component } from 'react'
 import Logo from './components/Logo'
 import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 import './styles/layout.sass'
 import './styles/typography.sass'
-import './styles/components/parallax.sass'
+import './styles/components/sections.sass'
 import './styles/components/logo.sass'
 
 class App extends Component {
   render() {
     return (
-      <div className="wrapper">
-        <section className="parallax">
-          <Logo large />
-          <p>PHP &bull; CSS &bull; JavaScript</p>
-          <p>DevOps</p>
-          <p>Musician</p>
-        </section>
+      <>
+        <Navbar>
+          <Logo />
+        </Navbar>
 
-        <section className="parallax">
-          <Logo large />
-          <p>PHP &bull; CSS &bull; JavaScript</p>
-          <p>DevOps</p>
-          <p>Musician</p>
-        </section>
+        <div className="wrapper">
+          <section className="first-section">
+            <Logo large />
+          </section>
 
-        <section className="parallax">
-          <Logo large />
-          <p>PHP &bull; CSS &bull; JavaScript</p>
-          <p>DevOps</p>
-          <p>Musician</p>
-        </section>
+          <section className="second-section">
+            <h2>Another Great Section</h2>
+          </section>
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </>
     )
   }
 }
