@@ -1,11 +1,41 @@
 section
   height: 100vh
   display: flex
+  flex-direction: column
   justify-content: center
   align-items: center
 
-.first-section
-  background: url(/images/fog-background.png) no-repeat center center
+  &.first
+    background: url(/images/fog-background.png) no-repeat center center
 
-.second-section
-  background-color: rgba(0,0,0,0.25)
+    p
+      font-size: 1.4em
+      margin: 0
+        top: 25px
+
+      &:nth-of-type(2)
+        opacity: 0.9
+        font-size: 1.25em
+        margin-top: 20px
+
+      &:nth-of-type(3)
+        opacity: 0.8
+        font-size: 1em
+        margin-top: 20px
+
+  &.second
+    background-color: rgba(0,0,0,0.25)
+
+    .row
+      width: 960px
+      display: flex
+      flex-direction: row
+
+      .column
+        flex: 1
+          basis: 100%
+          direction: column
+
+    p
+      font-size: 1.6em
+      line-height: 1.2
