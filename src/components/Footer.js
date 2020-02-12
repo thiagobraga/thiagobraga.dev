@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 
-const Container = styled.footer`
-  background-color: rgb(53,56,64);
-  height: 400px;
-`;
-
-class Footer extends Component {
+export default class Footer extends Component {
   render() {
-    return <Container>{this.props.children}</Container>
+    return (
+      <footer>
+        Thiago Braga
+        {this.props.children}
+      </footer>
+    )
   }
 }
-
-export default Footer

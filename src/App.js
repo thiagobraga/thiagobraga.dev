@@ -1,34 +1,31 @@
 import React, { Component } from 'react'
-import Logo from './components/Logo'
 import Footer from './components/Footer'
+import Loader from './components/Loader'
+import Logo from './components/Logo'
 import Navbar from './components/Navbar'
 import './styles/layout.sass'
 import './styles/typography.sass'
 import './styles/components/sections.sass'
-import './styles/components/logo.sass'
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <>
+      <div className="wrapper">
+        <Loader />
+
         <Navbar>
           <Logo />
         </Navbar>
 
-        <div className="wrapper">
-          <section className="first-section">
-            <Logo large />
-          </section>
+        <section className="first">
+          <Logo large />
 
-          <section className="second-section">
-            <h2>Another Great Section</h2>
-          </section>
+          <p>Developer</p>
+          <p>Musician</p>
+        </section>
 
-          <Footer />
-        </div>
-      </>
+        <Footer />
+      </div>
     )
   }
 }
-
-export default App

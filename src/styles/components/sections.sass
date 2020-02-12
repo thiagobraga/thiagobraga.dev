@@ -4,38 +4,46 @@ section
   flex-direction: column
   justify-content: center
   align-items: center
+  position: relative
+  z-index: 1
 
   &.first
     background: url(/images/fog-background.png) no-repeat center center
-
     p
+      cursor: default
       font-size: 1.4em
       margin: 0
         top: 25px
-
       &:nth-of-type(2)
         opacity: 0.9
         font-size: 1.25em
         margin-top: 20px
-
       &:nth-of-type(3)
         opacity: 0.8
         font-size: 1em
         margin-top: 20px
 
   &.second
-    background-color: rgba(0,0,0,0.25)
-
-    .row
-      width: 960px
-      display: flex
-      flex-direction: row
-
-      .column
-        flex: 1
-          basis: 100%
-          direction: column
-
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      background:
+        color: rgba(0,0,0,0.25)
+      opacity: 0.5
+      width: 100%
+      height: 100vh
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
     p
-      font-size: 1.6em
-      line-height: 1.2
+      font-size: 1.4em
+      line-height: 1.3
+
+  &.third
+    background-color: #444
+    img
+      border-radius: 50%
