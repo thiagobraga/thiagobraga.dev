@@ -23,8 +23,6 @@ export default class App extends Component {
           <p>Developer</p>
           <p>Musician</p>
         </section>
-
-        <Footer />
       </div>
     )
   }
