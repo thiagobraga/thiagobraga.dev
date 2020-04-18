@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import '../styles/components/animation.sass'
-import '../styles/components/logo.sass'
+import '../../styles/components/animation.sass'
+import '../../styles/components/logo.sass'
 
-export default class Logo extends Component {
+class Logo extends Component {
   render() {
     return (
       <span className={this.props.large ? 'logo large' : 'logo'}>
@@ -11,3 +11,5 @@ export default class Logo extends Component {
     )
   }
 }
+
+export default Logo

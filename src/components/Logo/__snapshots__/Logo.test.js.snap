@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo component It should render Thiago Braga 1`] = `
+<span
+  className="logo"
+>
+  Thiago 
+  <b>
+    Braga
+  </b>
+</span>
+`;
