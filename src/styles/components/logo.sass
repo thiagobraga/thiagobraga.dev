@@ -2,13 +2,15 @@
   color: fade-out(#f1f1f1, 0.25)
   cursor: default
   font-size: 1.2em
-  margin: 0
   font-weight: 200
-
+  margin: 0
   &.large
     color: fade-out(#f1f1f1, 0.5)
-    font-size: 17vmin
-    letter-spacing: -4px
+    font-size: 12vmin
+    letter-spacing: -5px
+    @media (max-width: 575.98px)
+      font-size: 4rem
+      letter-spacing: -3.5px
 
   b
     font-weight: 400
