@@ -1025,6 +1025,13 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@icons-pack/react-simple-icons@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-2.7.1.tgz#e31dd00db9c9c91301b7d7f4722ccc52958bd4aa"
+  integrity sha512-0w3PatbdlcmKbk7b3/iP7wan9B0DIWceIk41MQYBMoUSHxycvpmpSytjTbt0d2+lAkbSHWy1A3Wb7ZRL3lii4g==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
@@ -1366,6 +1373,11 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
+
+"@types/simple-icons@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@types/simple-icons/-/simple-icons-2.5.0.tgz#513753dc2416e0a9ae1767df678e1e7063e9d948"
+  integrity sha512-cHQ145criWruZJaYFt76WcarU+jICOHzyLma/VtC2mISrJnlXMYTcfH2hER5ecUSPf90/qxKYYOsIkAXlQhoHQ==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
