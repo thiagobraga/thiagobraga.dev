@@ -1,4 +1,5 @@
 @import '../global/_variables'
+@import ~flexboxgrid-sass/flexboxgrid
 
 section
   background-color: darken(saturate($background-color, 6%), 6%)
@@ -9,9 +10,10 @@ section
   align-items: center
   position: relative
   z-index: 2
+  padding: 0 0.5rem
 
   &.home
-    background: $dark-gray url(/images/fog-background.png) no-repeat center center
+    background: $dark-gray url(/images/fog-background_compressed.png) no-repeat center center
     background-size: auto
     > div
       cursor: default
@@ -38,10 +40,35 @@ section
     position: relative
     z-index: 1
     align-items: center
-    flex-direction: row
+    img
+      border-radius: 50%
+      height: 100px
+      width: 100px
+      object-fit: cover
+    h5
+      font-size: 1em
+      font-weight: 500
+      opacity: 0.6
+      margin-top: 10px
+      margin-bottom: 10px
     p
-      font-size: 1.4em
+      font-size: 14px
+      letter-spacing: 0.5px
       line-height: 1.3
+      opacity: 0.8
+      margin-top: 0
+    .row > div
+      text-align: center
+      padding: 0
+      margin-bottom: 40px
+
+      &:nth-child(1),
+      &:nth-child(3)
+        > img
+          object-position: top
+      &:nth-child(6)
+        > img
+          object-position: top
 
   &:last-of-type
     margin-bottom: $footer-height

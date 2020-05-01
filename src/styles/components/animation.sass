@@ -1,14 +1,22 @@
 .logo, .navbar, section, footer
-  animation: fadeInAnimation ease 2s
+  animation: fadeInNormal ease 2s
   animation-iteration-count: 1
   animation-fill-mode: forwards
 
 footer
-  animation: fadeInAnimation ease 2.5s
+  animation: fadeInFast ease-out 3s
 
-@keyframes fadeInAnimation
+@keyframes fadeInNormal
   0%,
   50%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes fadeInFast
+  0%,
+  80%
     opacity: 0
 
   100%
