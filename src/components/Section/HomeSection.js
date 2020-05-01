@@ -12,7 +12,7 @@ const HomeSection = () => {
   }, [])
 
   return (
-    <section className="home" style={{ backgroundPositionY: -offset / 3 }}>
+    <section className="home" style={{ backgroundPositionY: -offset / 5 }}>
       <Logo large />
 
       <div>
@@ -35,8 +35,6 @@ const HomeSection = () => {
       </div>
 
       <div>Musician</div>
-
-      <div><small>Soon...</small></div>
     </section>
   )
 }

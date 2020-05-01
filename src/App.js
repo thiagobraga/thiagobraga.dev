@@ -1,37 +1,35 @@
 import React from 'react'
 import { Github } from '@icons-pack/react-simple-icons'
 
-import HomeSection from './components/Section/HomeSection'
-import WhoAmISection from './components/Section/WhoAmISection'
 import Footer from './components/Footer/Footer'
 import Loader from './components/Loader'
 import Logo from './components/Logo/Logo'
 import Navbar from './components/Navbar'
+import HomeSection from './components/Section/HomeSection'
+import WhoAmISection from './components/Section/WhoAmISection'
 import './styles/components/sections.sass'
 import './styles/layout.sass'
 import './styles/typography.sass'
 
 const App = () => {
-  return (
-    <div className="wrapper">
-      <Loader />
+  return <>
+    <Loader />
 
-      <Navbar>
-        <Logo />
+    <Navbar>
+      <Logo />
 
-        <a href="https://github.com/thiagobraga"
-          target="blank"
-          rel="noopener noreferrer">
-          <Github />
-        </a>
-      </Navbar>
+      <a href="https://github.com/thiagobraga"
+        target="blank"
+        rel="noopener noreferrer">
+        <Github />
+      </a>
+    </Navbar>
 
-      <HomeSection />
-      {/* <WhoAmISection /> */}
+    <HomeSection />
+    <WhoAmISection />
 
-      <Footer />
-    </div>
-  )
+    <Footer />
+  </>
 }
 
 export default App
