@@ -7,7 +7,10 @@ const Footer = () => {
     <footer>
       <article>
         <Logo /><br />
-        <small>📷 Paul Gilmore (Unsplash)</small>
+        <small>
+          <span role="img" aria-label="Camera emoji">📷</span>{' '}
+          Paul Gilmore (Unsplash)
+        </small>
       </article>
 
       <article>
