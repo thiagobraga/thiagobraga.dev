@@ -1,0 +1,31 @@
+@import '../global/_variables'
+
+footer
+  background-color: darken(saturate($background-color, 10%), 20%)
+  position: fixed
+  bottom: 0
+  display: grid
+  align-items: flex-start
+  justify-content: center
+  grid-template-columns: 2fr 1fr
+  width: 100%
+  height: $footer-height
+  z-index: -1
+
+  > article
+    margin: 60px 20px
+    &:first-child
+      font-size: 1.3em
+      font-weight: 400
+    ul
+      padding: 0
+      margin: 0
+      li
+        list-style: none
+
+  a
+    color: #ddd
+
+  small
+    font-size: 14px
+    opacity: 0.6
