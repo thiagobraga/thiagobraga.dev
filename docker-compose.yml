@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./:/app:rw
+    networks:
+      - proxy
+    labels:
+      traefik.http.routers.backend.rule: Host(`thiagobraga.local`)
+      traefik.http.routers.backend.entrypoints: https
+      traefik.http.routers.backend.tls: true
+
+networks:
+  proxy:
