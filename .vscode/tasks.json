@@ -6,7 +6,7 @@
     {
       "label": "yarn start",
       "type": "shell",
-      "command": "yarn start",
+      "command": "yarn && yarn start",
       "problemMatcher": [],
       "group": {
         "kind": "build",
