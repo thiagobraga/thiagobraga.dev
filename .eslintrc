@@ -1,0 +1,42 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "globals": {
+    "window": "readonly"
+  },
+  "rules": {
+    "brace-style": ["error", "stroustrup"],
+    "class-methods-use-this": "off",
+    "function-paren-newline": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "max-len": ["warn", { "code": 120 }],
+    "no-plusplus": "off",
+    "no-trailing-spaces": "off",
+    "no-unused-vars": 1,
+    "object-curly-newline": "off",
+    "quote-props": ["error", "consistent"],
+    "react/jsx-curly-brace-presence": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-indent": "off",
+    "react/prefer-stateless-function": 2,
+    "react/prop-types": "off"
+  },
+  "env": {
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["*.test.jsx"],
+      "rules": {
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ],
+  "parser": "babel-eslint"
+}
