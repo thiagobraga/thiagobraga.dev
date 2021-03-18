@@ -6,7 +6,6 @@ import Loader from './components/Loader'
 import Logo from './components/Logo/Logo'
 import Navbar from './components/Navbar'
 import HomeSection from './components/Section/HomeSection'
-import WhoAmISection from './components/Section/WhoAmISection'
 import './styles/components/sections.sass'
 import './styles/layout.sass'
 import './styles/typography.sass'
@@ -26,7 +25,6 @@ const App = () => {
     </Navbar>
 
     <HomeSection />
-    <WhoAmISection />
 
     <Footer />
   </>
