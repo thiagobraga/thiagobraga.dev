@@ -1,42 +1,115 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:import/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
   "globals": {
     "window": "readonly"
   },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import"
+  ],
   "rules": {
-    "brace-style": ["error", "stroustrup"],
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ],
     "class-methods-use-this": "off",
     "function-paren-newline": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": ["Link"],
-        "specialLink": ["to"]
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "to"
+        ]
       }
     ],
-    "jsx-quotes": ["error", "prefer-single"],
-    "max-len": ["warn", { "code": 120 }],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 120
+      }
+    ],
+    "no-duplicate-imports": "error",
+    "no-multiple-empty-lines": [
+      1,
+      {
+        "max": 1,
+        "maxEOF": 1,
+        "maxBOF": 0
+      }
+    ],
     "no-plusplus": "off",
     "no-trailing-spaces": "off",
     "no-unused-vars": 1,
     "object-curly-newline": "off",
-    "quote-props": ["error", "consistent"],
+    "quote-props": [
+      "error",
+      "consistent"
+    ],
     "react/jsx-curly-brace-presence": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "react/jsx-indent-props": "off",
     "react/jsx-indent": "off",
     "react/prefer-stateless-function": 2,
-    "react/prop-types": "off"
-  },
-  "env": {
-    "jest": true
-  },
-  "overrides": [
-    {
-      "files": ["*.test.jsx"],
-      "rules": {
-        "react/jsx-props-no-spreading": "off"
+    "react/prop-types": "off",
+    "import/first": "error",
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
       }
-    }
-  ],
-  "parser": "babel-eslint"
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "external",
+          "internal",
+          "builtin"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
 }
