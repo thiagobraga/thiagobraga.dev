@@ -11,9 +11,11 @@ services:
     networks:
       - proxy
     labels:
-      traefik.http.routers.backend.rule: Host(`thiagobraga.local`)
-      traefik.http.routers.backend.entrypoints: https
-      traefik.http.routers.backend.tls: true
+      traefik.http.routers.app.rule: Host(`thiagobraga.local`)
+      traefik.http.routers.app.entrypoints: https
+      traefik.http.routers.app.tls: true
+      traefik.http.services.app.loadbalancer.server.port: 5000
 
 networks:
   proxy:
+    external: true
