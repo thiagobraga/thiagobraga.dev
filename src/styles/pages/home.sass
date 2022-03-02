@@ -1,0 +1,38 @@
+@import ../config
+
+$paragraph-font-size: clamp(1em, 2vw, 1.45em)
+
+.home
+  background: $gray-900 url(/images/fog-background.jpg) center center/cover no-repeat
+
+  > div
+    display: flex
+    flex-direction: column
+
+    > p
+      cursor: default
+      font-size: 1.4em
+      font-size: $paragraph-font-size
+      margin: 0
+      margin-top: 0.3rem
+      text-align: center
+
+      a,
+      span
+        color: $yellow-400
+
+      em
+        color: $gray-300
+        font-style: normal
+
+      a
+        text-decoration: underline solid rgba($yellow-400, 0.2)
+        transition: all ease 0.25s
+        font-weight: 300
+        opacity: 0.75
+        &:hover
+          text-decoration-color: rgba($yellow-100, 0.4)
+          color: $yellow-100
+
+      &:nth-of-type(1)
+        margin-top: 1.5rem

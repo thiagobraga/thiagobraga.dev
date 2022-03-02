@@ -1,11 +1,15 @@
-@import global
+@import config
 
 html
-  scroll-behavior: smooth
+  box-sizing: border-box
+  overflow: hidden
+
+*, *:before, *:after
+  box-sizing: inherit
 
 body
   background-color: $footer-background
-  color: fade-out(#f1f1f1, 0.25)
+  color: #f1f1f1
   margin: 0
 
 a
@@ -15,8 +19,29 @@ a
   &:active
     text-decoration: none
 
-.wrapper
-  height: 100vh
+.container
+  display: flex
+  align-items: center
+  padding: 0 20px
+  width: 960px
 
-:selection
-  background-color: $dark-gray
+.social-icons
+  $icon-size: 1.4em
+  margin-left: auto
+  display: flex
+  align-items: center
+
+  > a
+    &:not(:last-child)
+      margin-right: .75rem
+    > svg
+      width: $icon-size
+      height: $icon-size
+      transition: all ease 0.25s
+      color: rgba(#f1f1f1, 0.725)
+    &:hover > svg
+      color: #f1f1f1
+
+
+::selection
+  background-color: desaturate(lighten($gray-600, 30%), 5%)

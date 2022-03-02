@@ -1,16 +1,26 @@
 .logo
-  color: fade-out(#f1f1f1, 0.25)
+  color: rgba(#f1f1f1, 0.85)
   cursor: default
   font-size: 1.2em
   font-weight: 200
+  line-height: 0.75
   margin: 0
-  &.large
-    color: fade-out(#f1f1f1, 0.5)
-    font-size: 12vmin
-    letter-spacing: -5px
-    @media (max-width: 575.98px)
-      font-size: 4rem
-      letter-spacing: -3.5px
 
   b
     font-weight: 400
+
+  &.lg
+    font-size: clamp(3.4rem, 16vw, 12vmin)
+    letter-spacing: -0.25rem
+    @media (max-width: 575.98px)
+      letter-spacing: -0.175rem
+
+  &.md
+    font-size: clamp(2rem, 16vw, 6.4vmin)
+    letter-spacing: -0.15rem
+    @media (max-width: 575.98px)
+      letter-spacing: -0.05rem
+
+  &.lg,
+  &.md
+    color: rgba(#f1f1f1, 0.6)

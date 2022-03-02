@@ -1,75 +1,10 @@
-@import '../global/_variables'
+@import '../config'
 @import ~flexboxgrid-sass/flexboxgrid
 
 section
-  background-color: darken(saturate($background-color, 6%), 6%)
+  background-color: $gray-900
   height: 100vh
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
-  position: relative
-  z-index: 2
-  padding: 0 0.5rem
-
-  &.home
-    background: $dark-gray url(/images/fog-background_compressed.png) no-repeat center center
-    background-size: auto
-    > div
-      cursor: default
-      font-size: 1.4em
-      margin: 0
-      margin-top: 20px
-      span
-        color: hsl(32, 45%, 82%)
-      small
-        font-size: 0.5em
-        text-transform: uppercase
-        letter-spacing: 3px
-      &:nth-of-type(2)
-        opacity: 0.85
-        font-size: 1.25em
-        margin-top: 5px
-      &:nth-of-type(3)
-        opacity: 0.8
-        font-size: 1.15em
-        margin-top: 8px
-
-  &.whoami
-    background-color: darken(saturate($background-color, 6%), 12.5%)
-    position: relative
-    z-index: 1
-    align-items: center
-    img
-      border-radius: 50%
-      height: 100px
-      width: 100px
-      object-fit: cover
-    h5
-      font-size: 1em
-      font-weight: 500
-      opacity: 0.6
-      margin-top: 10px
-      margin-bottom: 10px
-    p
-      font-size: 14px
-      letter-spacing: 0.5px
-      line-height: 1.3
-      opacity: 0.8
-      margin-top: 0
-    .row > div
-      text-align: center
-      padding: 0
-      margin-bottom: 40px
-
-      &:nth-child(1),
-      &:nth-child(3)
-        > img
-          object-position: top
-      &:nth-child(6)
-        > img
-          object-position: top
-
-  &:last-of-type
-    margin-bottom: $footer-height
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.275)
