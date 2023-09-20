@@ -15,7 +15,8 @@ export default function App() {
   const [limitY, setLimitY] = useState(false);
 
   useEffect(() => {
-    const scrollbar = Scrollbar.init(window.document.querySelector('[data-scrollbar]'));
+    const scrollbar = Scrollbar.init(document.querySelector('[data-scrollbar]'), { damping: 0.025 });
+
     const onScroll = (status) => {
       setOffsetY(status.offset.y);
       setLimitY(status.limit.y);
@@ -32,6 +33,8 @@ export default function App() {
   // Parallax effect applied to background images
   const headerParallax = -(offsetY * 0.7);
   const footerParallax = (limitY - offsetY - 50) * 0.7;
+
+  console.log(offsetY, headerParallax);
 
   // Define styles to use in components
   const styles = {
