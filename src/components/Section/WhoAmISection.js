@@ -7,7 +7,7 @@ const WhoAmISection = () => {
 
       <div className="row">
         <div className="col-xs-4">
-          <img src="/images/braga-bebe.jpg" alt="Me with 1 year" />
+          <Image src="/images/braga-bebe.jpg" alt="Me with 1 year" />
           <h5>A nice baby</h5>
           <p>
             I'm this beautiful baby in the photo.<br/>
@@ -15,7 +15,7 @@ const WhoAmISection = () => {
           </p>
         </div>
         <div className="col-xs-4">
-          <img src="/images/braga-nerd.jpg" alt="Me with 4 years" />
+          <Image src="/images/braga-nerd.jpg" alt="Me with 4 years" />
           <h5>Nerd since early</h5>
           <p>
             Early breaking my uncle's 486DX4.<br/>
@@ -23,7 +23,7 @@ const WhoAmISection = () => {
           </p>
         </div>
         <div className="col-xs-4">
-          <img src="/images/braga-chico.jpg" alt="My dog with me" />
+          <Image src="/images/braga-chico.jpg" alt="My dog with me" />
           <h5>My dog's dad</h5>
           <p>
             This is Chico, my big mutt son.<br/>
@@ -31,7 +31,7 @@ const WhoAmISection = () => {
           </p>
         </div>
         <div className="col-xs-4">
-          <img src="/images/braga-playing.jpg" alt="Me playing with Escape from the World" />
+          <Image src="/images/braga-playing.jpg" alt="Me playing with Escape from the World" />
           <h5>A dedicated musician</h5>
           <p>
             Actually playing on the bands<br/>
@@ -39,7 +39,7 @@ const WhoAmISection = () => {
           </p>
         </div>
         <div className="col-xs-4">
-          <img src="/images/braga-titio.jpg" alt="Me and Ian" />
+          <Image src="/images/braga-titio.jpg" alt="Me and Ian" />
           <h5>A happy titio</h5>
           <p>
             After some diaper changes,<br/>
@@ -47,7 +47,7 @@ const WhoAmISection = () => {
           </p>
         </div>
         <div className="col-xs-4">
-          <img src="/images/braga-sociopata.jpg" alt="After Sociopata rehearsal" />
+          <Image src="/images/braga-sociopata.jpg" alt="After Sociopata rehearsal" />
           <h5>And me with Sociopata</h5>
           <p>
             After a rehearsal,<br/>

@@ -3,21 +3,26 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "next test",
+    "eject": "next eject"
   },
   "dependencies": {
-    "@icons-pack/react-simple-icons": "2.7.1",
-    "flexboxgrid-sass": "8.0.5",
     "react": "16.9.0",
     "react-dom": "16.9.0",
+    "next": "latest",
+    "@icons-pack/react-simple-icons": "2.7.1",
+    "flexboxgrid-sass": "8.0.5",
     "react-scripts": "3.1.2",
     "react-text-loop": "2.3.0",
     "styled-components": "4.4.0"
   },
   "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-next": "latest",
     "@types/simple-icons": "2.5.0",
     "react-test-renderer": "^16.13.1",
     "sass": "1.23.1"
