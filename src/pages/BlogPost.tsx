@@ -131,7 +131,7 @@ const BlogPost: React.FC = () => {
         style={{ backgroundImage: `url(${post.image})` }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="container h-full flex flex-col justify-end pb-16 relative z-10">
+        <div className="container h-full flex flex-col justify-end pb-12 relative z-10">
           <div className="text-white max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
             <p className="text-xl mb-6">{post.description}</p>
