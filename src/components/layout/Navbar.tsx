@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const Navbar: React.FC = () => {
   return (
-    <header className="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b">
+    <header className="fixed w-full top-0 z-50 bg-background/60 backdrop-blur-md border-b border-white/10">
       <div className="container flex items-center justify-between h-16">
         <Link to="/" className="text-xl font-medium">
           Thiago Braga
