@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 // Mock blog post data
@@ -105,6 +105,11 @@ const blogPosts = {
 const BlogPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const post = blogPosts[id as keyof typeof blogPosts];
+  
+  // Scroll to top when component mounts or id changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
   
   if (!post) {
     return (
