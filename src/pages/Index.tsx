@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -87,7 +86,6 @@ const IndexPage: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="hero-section min-h-screen flex flex-col items-center justify-center text-white relative">
-        <div className="absolute inset-0 bg-black/40" />
         <div className="container relative z-10 text-center">
           <h1 className="text-6xl md:text-8xl font-bold animate-fade-in">Thiago Braga</h1>
           <p className="mt-4 text-lg md:text-xl animate-fade-in">

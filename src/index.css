@@ -84,10 +84,28 @@
 }
 
 .hero-section {
-  background-image: url('/lovable-uploads/a976cfcf-474d-4b93-9fdd-852fd452a8e5.png');
+  background: #3e4551 url('https://thiagobraga.dev/images/fog-background_compressed.png') no-repeat 50%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2;
 }
 
 .blog-post-hero {
