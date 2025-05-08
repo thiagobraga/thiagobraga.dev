@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Helvetica', 'Helvetica Neue', 'Arial', 'Roboto', 'Open Sans', 'sans-serif'],
+				sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'Roboto', 'Open Sans', 'sans-serif'],
 				playfair: ['Playfair Display', 'serif']
 			},
 			colors: {
