@@ -79,7 +79,7 @@
     scroll-behavior: smooth;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+    @apply font-sans;
   }
 }
 
@@ -125,4 +125,14 @@
   .blog-content {
     width: 33.333333%;
   }
+}
+
+/* Navbar text glow effect */
+.navbar-link {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: text-shadow 0.3s ease;
+}
+
+.navbar-link:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
