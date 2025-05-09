@@ -8,7 +8,7 @@ import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 const authors = {
   "1": {
     id: "1",
-    name: "Thiago Braga",
+    name: "Thiago <strong>Braga</strong>",
     avatar: "/lovable-uploads/5350092f-cd95-4355-8c32-491d23cf53d9.png",
     bio: "SRE Engineer with over 10 years of experience in building and maintaining large-scale infrastructure. Passionate about automation, cloud architecture, and DevOps culture.",
     position: "SRE Engineer at Scaffold Education",
@@ -76,12 +76,12 @@ const Author: React.FC = () => {
           <div className="w-40 h-40 rounded-full overflow-hidden bg-secondary">
             <img 
               src={author.avatar} 
-              alt={author.name}
+              alt={author.name.replace(/<[^>]*>?/gm, '')}
               className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl font-bold mb-2">{author.name}</h1>
+            <h1 className="text-4xl font-bold font-light mb-2" dangerouslySetInnerHTML={{ __html: author.name }} />
             <p className="text-lg text-muted-foreground mb-4">{author.position}</p>
             <p className="mb-6">{author.bio}</p>
             <div className="flex justify-center md:justify-start gap-4">
@@ -114,7 +114,7 @@ const Author: React.FC = () => {
         </div>
         
         <div>
-          <h2 className="text-2xl font-bold mb-6">Articles by {author.name}</h2>
+          <h2 className="text-2xl font-bold mb-6">Articles by <span dangerouslySetInnerHTML={{ __html: author.name }} /></h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post) => (
               <Link to={`/blog/${post.id}`} key={post.id} className="group">

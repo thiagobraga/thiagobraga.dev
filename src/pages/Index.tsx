@@ -87,17 +87,19 @@ const IndexPage: React.FC = () => {
       {/* Hero Section */}
       <section className="hero-section min-h-screen flex flex-col items-center justify-center text-white relative">
         <div className="container relative z-10 text-center">
-          <h1 className="text-6xl md:text-8xl font-bold animate-fade-in">Thiago Braga</h1>
-          <p className="mt-4 text-lg md:text-xl animate-fade-in">
+          <h1 className="text-6xl md:text-8xl font-light animate-fade-in">
+            Thiago <strong>Braga</strong>
+          </h1>
+          <p className="mt-4 text-lg md:text-xl animate-fade-in font-light">
             SRE Engineer living in Brazil · currently working at Scaffold Education
           </p>
-          <p className="mt-6 max-w-xl mx-auto text-white/80 animate-fade-in">
+          <p className="mt-6 max-w-xl mx-auto text-white/80 animate-fade-in font-light">
             {randomDescription}
           </p>
           <div className="mt-12 animate-fade-in">
             <Button 
               variant="outline" 
-              className="rounded-full bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20"
+              className="rounded-full bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20 font-light"
               onClick={() => {
                 document.getElementById('carousel-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
@@ -112,7 +114,7 @@ const IndexPage: React.FC = () => {
       {/* Carousel Section */}
       <section id="carousel-section" className="py-20 bg-secondary">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-10 text-center text-white">My Journey</h2>
+          <h2 className="text-3xl font-light mb-10 text-center text-white">My Journey</h2>
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {carouselImages.map((image, index) => (
@@ -150,7 +152,7 @@ const IndexPage: React.FC = () => {
             </div>
             <div className="lg:col-span-7">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold mb-4">Latest from the Blog</h2>
+                <h2 className="text-3xl font-light mb-4">Latest from the Blog</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {featuredPosts.map((post) => (
                     <Link to={`/blog/${post.id}`} key={post.id} className="group">

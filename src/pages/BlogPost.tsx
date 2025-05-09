@@ -47,7 +47,7 @@ const blogPosts = {
     `,
     image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1920',
     date: '2025-04-01T12:00:00.000Z',
-    author: 'Thiago Braga',
+    author: 'Thiago <strong>Braga</strong>',
     authorId: '1',
     tags: ['kubernetes', 'devops', 'scalability'],
     category: 'Infrastructure'
@@ -95,7 +95,7 @@ const blogPosts = {
     `,
     image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1920',
     date: '2025-03-25T12:00:00.000Z',
-    author: 'Thiago Braga',
+    author: 'Thiago <strong>Braga</strong>',
     authorId: '1',
     tags: ['security', 'zero-trust', 'cybersecurity'],
     category: 'Security'
@@ -136,7 +136,7 @@ const BlogPost: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
             <p className="text-xl mb-6">{post.description}</p>
             <div className="flex items-center text-sm">
-              <a href={`/author/${post.authorId}`} className="hover:underline">{post.author}</a>
+              <a href={`/author/${post.authorId}`} className="hover:underline" dangerouslySetInnerHTML={{ __html: post.author }} />
               <span className="mx-2">·</span>
               <span>{formatDate(post.date)}</span>
             </div>
