@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
@@ -37,84 +38,86 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          {/* Main site routes */}
-          <Route 
-            path="/" 
-            element={
-              <MainLayout>
-                <Index />
-              </MainLayout>
-            } 
-          />
-          <Route 
-            path="/blog" 
-            element={
-              <MainLayout>
-                <Blog />
-              </MainLayout>
-            } 
-          />
-          <Route 
-            path="/blog/:id" 
-            element={
-              <MainLayout>
-                <BlogPost />
-              </MainLayout>
-            } 
-          />
-          <Route 
-            path="/author/:id" 
-            element={
-              <MainLayout>
-                <Author />
-              </MainLayout>
-            } 
-          />
-          
-          {/* Admin routes */}
-          <Route 
-            path="/admin" 
-            element={
-              <AdminLayout>
-                <Login />
-              </AdminLayout>
-            } 
-          />
-          <Route 
-            path="/admin/dashboard" 
-            element={
-              <AdminLayout>
-                <Dashboard />
-              </AdminLayout>
-            } 
-          />
-          <Route 
-            path="/admin/post/new" 
-            element={
-              <AdminLayout>
-                <PostEditor />
-              </AdminLayout>
-            } 
-          />
-          <Route 
-            path="/admin/post/:id" 
-            element={
-              <AdminLayout>
-                <PostEditor />
-              </AdminLayout>
-            } 
-          />
-          
-          {/* Catch-all route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Main site routes */}
+            <Route 
+              path="/" 
+              element={
+                <MainLayout>
+                  <Index />
+                </MainLayout>
+              } 
+            />
+            <Route 
+              path="/blog" 
+              element={
+                <MainLayout>
+                  <Blog />
+                </MainLayout>
+              } 
+            />
+            <Route 
+              path="/blog/:id" 
+              element={
+                <MainLayout>
+                  <BlogPost />
+                </MainLayout>
+              } 
+            />
+            <Route 
+              path="/author/:id" 
+              element={
+                <MainLayout>
+                  <Author />
+                </MainLayout>
+              } 
+            />
+            
+            {/* Admin routes */}
+            <Route 
+              path="/admin" 
+              element={
+                <AdminLayout>
+                  <Login />
+                </AdminLayout>
+              } 
+            />
+            <Route 
+              path="/admin/dashboard" 
+              element={
+                <AdminLayout>
+                  <Dashboard />
+                </AdminLayout>
+              } 
+            />
+            <Route 
+              path="/admin/post/new" 
+              element={
+                <AdminLayout>
+                  <PostEditor />
+                </AdminLayout>
+              } 
+            />
+            <Route 
+              path="/admin/post/:id" 
+              element={
+                <AdminLayout>
+                  <PostEditor />
+                </AdminLayout>
+              } 
+            />
+            
+            {/* Catch-all route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

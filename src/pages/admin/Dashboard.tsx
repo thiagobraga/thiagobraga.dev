@@ -1,9 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
 import { Pencil, Trash2, Plus, LogOut } from 'lucide-react';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 // Mock posts data
 const posts = [
@@ -61,6 +61,7 @@ const Dashboard: React.FC = () => {
           <p className="text-muted-foreground">Manage your blog content</p>
         </div>
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Button variant="outline" onClick={handleLogout}>
             <LogOut size={16} className="mr-2" />
             Logout
