@@ -28,7 +28,7 @@ const FeaturedPosts: React.FC<FeaturedPostsProps> = ({ posts }) => {
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all group-hover:shadow-lg">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src={post.image_url}
+                  src={post.image_url || "https://via.placeholder.com/800x450?text=No+Image"}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform group-hover:scale-105"
                 />

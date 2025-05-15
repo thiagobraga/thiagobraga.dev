@@ -10,9 +10,11 @@ const HeroSection: React.FC = () => {
         <h1 className="text-6xl md:text-8xl font-light animate-fade-in">
           Thiago <strong>Braga</strong>
         </h1>
-        <p className="mt-4 text-lg md:text-xl animate-fade-in font-light">
-          <span className="text-base md:text-lg"><strong>SRE</strong> Engineer</span> living in Brazil <br /> 
-          <span className="uppercase">currently</span> working at Scaffold Education
+        <p className="mt-4 text-xl md:text-2xl animate-fade-in font-light">
+          <span className="text-lg md:text-xl"><strong>SRE</strong> Engineer</span> living in Brazil
+        </p>
+        <p className="mt-2 animate-fade-in font-light">
+          <span className="uppercase text-sm md:text-base">CURRENTLY</span> working at Scaffold Education
         </p>
       </div>
       <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-fade-in">
