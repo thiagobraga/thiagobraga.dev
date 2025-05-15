@@ -11,20 +11,21 @@ const HeroSection: React.FC = () => {
           Thiago <strong>Braga</strong>
         </h1>
         <p className="mt-4 text-lg md:text-xl animate-fade-in font-light">
-          SRE Engineer living in Brazil <br /> currently working at Scaffold Education
+          <span className="text-base md:text-lg"><strong>SRE</strong> Engineer</span> living in Brazil <br /> 
+          <span className="uppercase">currently</span> working at Scaffold Education
         </p>
-        <div className="absolute bottom-8 left-0 right-0 animate-fade-in">
-          <Button 
-            variant="outline" 
-            className="rounded-full bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20 font-light mx-auto mb-8"
-            onClick={() => {
-              document.getElementById('blog-section')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <ArrowDown className="mr-2" size={16} />
-            Explore
-          </Button>
-        </div>
+      </div>
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-fade-in">
+        <Button 
+          variant="outline" 
+          className="rounded-full bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/20 font-light"
+          onClick={() => {
+            document.getElementById('blog-section')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          <ArrowDown className="mr-2" size={16} />
+          Explore
+        </Button>
       </div>
     </section>
   );
