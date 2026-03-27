@@ -1,125 +1,127 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&family=Roboto:wght@200;300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
-@layer base {
-  :root {
-    --background: 220 20% 97%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 217 19% 27%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-
-    --sidebar-background: 222.2 84% 4.9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217.2 91.2% 59.8%;
-    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
-    --sidebar-accent: 217.2 32.6% 17.5%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 212.7 26.8% 83.9%; 
-  }
+/* ── Material Symbols tweaks ─────────────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
 }
 
+/* ── shadcn/ui CSS tokens (keep for existing admin/blog pages) ───── */
 @layer base {
+  :root {
+    --background: 216 26% 18%;    /* nord0 approx */
+    --foreground: 218 27% 94%;    /* nord6 approx */
+
+    --card: 220 17% 22%;
+    --card-foreground: 218 27% 94%;
+
+    --popover: 220 17% 22%;
+    --popover-foreground: 218 27% 94%;
+
+    --primary: 193 43% 67%;       /* nord8 */
+    --primary-foreground: 216 26% 18%;
+
+    --secondary: 213 32% 52%;     /* nord9 */
+    --secondary-foreground: 218 27% 94%;
+
+    --muted: 220 16% 27%;
+    --muted-foreground: 218 15% 80%;
+
+    --accent: 220 16% 27%;
+    --accent-foreground: 218 27% 94%;
+
+    --destructive: 354 42% 56%;   /* nord11 */
+    --destructive-foreground: 218 27% 94%;
+
+    --border: 220 13% 35%;        /* nord3 */
+    --input:  220 13% 35%;
+    --ring:   193 43% 67%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 216 26% 18%;
+    --sidebar-foreground: 218 27% 94%;
+    --sidebar-primary: 193 43% 67%;
+    --sidebar-primary-foreground: 216 26% 18%;
+    --sidebar-accent: 220 16% 27%;
+    --sidebar-accent-foreground: 218 27% 94%;
+    --sidebar-border: 220 13% 35%;
+    --sidebar-ring: 193 43% 67%;
+  }
+
+  /* Force dark mode globally for the Nord theme */
+  html {
+    color-scheme: dark;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: #2E3440;  /* nord0 */
+    color: #ECEFF4;             /* nord6 */
+    font-family: 'Inter', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans;
-  }
-  strong {
-    @apply font-normal;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
 
+/* ── Nord-specific utilities ─────────────────────────────────────── */
+@layer utilities {
+  /* Glassmorphism panel */
+  .glass {
+    background-color: rgba(59, 66, 82, 0.6);   /* nord1 @ 60% */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(76, 86, 106, 0.3);  /* nord3 @ 30% */
+  }
+
+  /* Ghost border - subtle boundary suggestion */
+  .ghost-border {
+    border: 1px solid rgba(76, 86, 106, 0.15); /* nord3 @ 15% */
+  }
+
+  /* Section tonal shift (No-Line Rule) */
+  .section-dim {
+    background-color: rgba(59, 66, 82, 0.3);   /* nord1 @ 30% */
+  }
+
+  /* Gradients */
+  .gradient-primary-secondary {
+    background: linear-gradient(135deg, rgba(136, 192, 208, 0.1), rgba(129, 161, 193, 0.1));
+  }
+
+  /* Heavy premium easing for transitions */
+  .ease-premium {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Text gradient */
+  .text-gradient-nord {
+    background: linear-gradient(90deg, #88C0D0, #81A1C1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ── Hero section (legacy + new) ────────────────────────────────── */
 .hero-section {
-  background: #3e4551 url('https://thiagobraga.dev/images/fog-background_compressed.png') no-repeat 50%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
+  min-height: 100vh;
 }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-section > * {
-  position: relative;
-  z-index: 2;
-}
-
+/* ── Blog post page ──────────────────────────────────────────────── */
 .blog-post-hero {
   height: 100vh;
   width: 100vw;
@@ -133,29 +135,28 @@
   margin: 0 auto;
 }
 
-@screen md {
-  .blog-content {
-    width: 33.333333%;
-  }
-}
-
-/* Navbar styles */
+/* ── Navbar (legacy override) ────────────────────────────────────── */
 header {
-  color: #bbb;
-  --tw-backdrop-blur: blur(15px);
+  color: #D8DEE9;
 }
 
-.bg-background\/40 {
-  background-color: hsl(var(--background) / .2);
+/* ── Custom scrollbar (Nord-styled) ─────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #2E3440;
+}
+::-webkit-scrollbar-thumb {
+  background: #4C566A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #88C0D0;
 }
 
-/* Navbar text glow effect - more subtle */
-.navbar-link {
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-  transition: text-shadow 0.3s ease, color 0.3s ease;
-}
-
-.navbar-link:hover {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-  color: #ddd;
+/* ── Selection highlight ─────────────────────────────────────────── */
+::selection {
+  background-color: rgba(136, 192, 208, 0.3);
+  color: #ECEFF4;
 }
