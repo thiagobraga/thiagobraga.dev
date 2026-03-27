@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Index from "./pages/Index";
+import Styleguide from "./pages/Styleguide";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -112,6 +113,16 @@ const App = () => (
               } 
             />
             
+            {/* Styleguide */}
+            <Route
+              path="/styleguide"
+              element={
+                <MainLayout>
+                  <Styleguide />
+                </MainLayout>
+              }
+            />
+
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
