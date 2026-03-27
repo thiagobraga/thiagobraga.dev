@@ -1,7 +1,108 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+  /* ── Nord Palette ── */
+  --color-nord0: #2E3440;
+  --color-nord1: #3B4252;
+  --color-nord2: #434C5E;
+  --color-nord3: #4C566A;
+  --color-nord4: #D8DEE9;
+  --color-nord5: #E5E9F0;
+  --color-nord6: #ECEFF4;
+  --color-nord7: #8FBCBB;
+  --color-nord8: #88C0D0;
+  --color-nord9: #81A1C1;
+  --color-nord10: #5E81AC;
+  --color-nord11: #BF616A;
+  --color-nord12: #D08770;
+  --color-nord13: #EBCB8B;
+  --color-nord14: #A3BE8C;
+  --color-nord15: #B48EAD;
+
+  /* ── Semantic Nord Aliases ── */
+  --color-surface: #2E3440;
+  --color-on-surface: #ECEFF4;
+  --color-on-surface-variant: #D8DEE9;
+  --color-outline: #4C566A;
+  --color-primary: #88C0D0;
+  --color-secondary: #81A1C1;
+  --color-tertiary: #EBCB8B;
+
+  /* ── Font System ── */
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Manrope", sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
+  /* ── shadcn/ui tokens (CSS variables) ── */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* ── Radius ── */
+  --radius-default: 0.125rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+
+  /* ── Animations ── */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scroll-bounce: scroll-bounce 1.5s ease-in-out infinite;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(24px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+}
 
 /* ── Material Symbols tweaks ─────────────────────────────────────── */
 .material-symbols-outlined {
@@ -9,7 +110,7 @@
   user-select: none;
 }
 
-/* ── shadcn/ui CSS tokens (keep for existing admin/blog pages) ───── */
+/* ── shadcn/ui CSS tokens ────────────────────────────────────────── */
 @layer base {
   :root {
     --background: 216 26% 18%;    /* nord0 approx */
@@ -78,35 +179,24 @@
 
 /* ── Nord-specific utilities ─────────────────────────────────────── */
 @layer utilities {
-  /* Glassmorphism panel */
   .glass {
-    background-color: rgba(59, 66, 82, 0.6);   /* nord1 @ 60% */
+    background-color: rgba(59, 66, 82, 0.6);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(76, 86, 106, 0.3);  /* nord3 @ 30% */
+    border: 1px solid rgba(76, 86, 106, 0.3);
   }
-
-  /* Ghost border - subtle boundary suggestion */
   .ghost-border {
-    border: 1px solid rgba(76, 86, 106, 0.15); /* nord3 @ 15% */
+    border: 1px solid rgba(76, 86, 106, 0.15);
   }
-
-  /* Section tonal shift (No-Line Rule) */
   .section-dim {
-    background-color: rgba(59, 66, 82, 0.3);   /* nord1 @ 30% */
+    background-color: rgba(59, 66, 82, 0.3);
   }
-
-  /* Gradients */
   .gradient-primary-secondary {
     background: linear-gradient(135deg, rgba(136, 192, 208, 0.1), rgba(129, 161, 193, 0.1));
   }
-
-  /* Heavy premium easing for transitions */
   .ease-premium {
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
-
-  /* Text gradient */
   .text-gradient-nord {
     background: linear-gradient(90deg, #88C0D0, #81A1C1);
     -webkit-background-clip: text;
@@ -115,32 +205,24 @@
   }
 }
 
-/* ── Hero section (legacy + new) ────────────────────────────────── */
+/* ── Hero section & Blog ────────────────────────────────────────── */
 .hero-section {
   position: relative;
   min-height: 100vh;
 }
-
-/* ── Blog post page ──────────────────────────────────────────────── */
 .blog-post-hero {
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
 }
-
 .blog-content {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* ── Navbar (legacy override) ────────────────────────────────────── */
-header {
-  color: #D8DEE9;
-}
-
-/* ── Custom scrollbar (Nord-styled) ─────────────────────────────── */
+/* ── Custom scrollbar ───────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -155,7 +237,7 @@ header {
   background: #88C0D0;
 }
 
-/* ── Selection highlight ─────────────────────────────────────────── */
+/* ── Selection focus ────────────────────────────────────────────── */
 ::selection {
   background-color: rgba(136, 192, 208, 0.3);
   color: #ECEFF4;
