@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Install chezmoi
+echo "Installing chezmoi..."
+sh -c "$(curl -fsLS get.chezmoi.io/lb)"
+# or using wget:
+# sh -c "$(wget -qO- get.chezmoi.io/lb)"
+
+# Add .local/bin to PATH
+echo "Adding .local/bin to PATH..."
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
+# Initialize chezmoi with dotfiles
+echo "Initializing chezmoi with dotfiles..."
+chezmoi init --apply thiagobraga/dotfiles
+
+echo "Installation complete!"
