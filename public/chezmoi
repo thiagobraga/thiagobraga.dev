@@ -8,8 +8,7 @@ sh -c "$(curl -fsLS get.chezmoi.io/lb)"
 
 # Add .local/bin to PATH
 echo "Adding .local/bin to PATH..."
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
+export PATH="$HOME/.local/bin:$PATH"
 
 # Initialize chezmoi with dotfiles
 echo "Initializing chezmoi with dotfiles..."

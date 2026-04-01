@@ -6,37 +6,58 @@ const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16 md:gap-32">
         {/* Text content */}
         <div className="order-2 md:order-1">
-          <h2 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-nord6 mb-12">
-            <span className="opacity-70 font-light">Who</span> <b>Am I</b>
+          <h2 className="font-headline text-5xl md:text-7xl tracking-tighter text-nord6 mb-12">
+            <span className="opacity-70 font-light">Who</span><span className="font-semibold">AmI</span>
           </h2>
 
           <div className="space-y-6 text-nord4/80 text-lg leading-relaxed font-medium">
             <p>
-              I'm a software engineer driven by the intersection of high-performance systems and
-              creative aesthetics. With a background spanning from low-level security infrastructure
-              to generative audio-visual arts, I build digital experiences that are as robust as
-              they are beautiful.
+              I am the intersection — where creativity meets technology, guided by a warm heart.
+              A disruptive thinker who solves complex IT problems with elegant solutions.
+              I try to make the world better — especially for dogs.
             </p>
             <p>
-              Based in Brazil, my work often reflects a sharp, precise sensibility — clean,
-              minimal, and deeply functional. When I'm not auditing Kubernetes clusters or
-              writing Rust, you can find me experimenting with synthesizers or exploring
-              nature with my dogs.
+              <small>
+                Currently living in Brazil (well, I've always lived here),
+                I have <b>16+</b> years of experience in software development.
+                I've worked with a wide range of technologies.
+                From web to mobile, from frontend to backend, and also as a DevOps Engineer.
+                I'm currently studying CyberSecurity.
+              </small>
+            </p>
+            <p>
+              <small>
+                When I'm not coding, or debugging something, or learning something new
+                (that I'll throw away minutes later), you can find me playing guitar,
+                making music, hanging out with my dogs, or playing games.
+              </small>
             </p>
           </div>
 
           {/* Stats */}
           <div className="mt-12 flex items-center gap-12">
             <div className="flex flex-col">
-              <span className="text-nord8 font-bold text-3xl font-headline">10+</span>
-              <span className="text-[10px] font-label uppercase tracking-widest text-nord3 font-black mt-1">
+              <span className="text-nord8 font-bold text-3xl font-headline">16+</span>
+              <span className="text-[10px] font-label uppercase tracking-widest text-nord4 font-black mt-1">
                 Years Experience
               </span>
             </div>
             <div className="flex flex-col">
-              <span className="text-nord15 font-bold text-3xl font-headline">50+</span>
-              <span className="text-[10px] font-label uppercase tracking-widest text-nord3 font-black mt-1">
-                Projects Shipped
+              <span className="text-nord15 font-bold text-3xl font-headline">5000 L+</span>
+              <span className="text-[10px] font-label uppercase tracking-widest text-nord4 font-black mt-1">
+                Coffee Consumed
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-nord14 font-bold text-3xl font-headline">3</span>
+              <span className="text-[10px] font-label uppercase tracking-widest text-nord4 font-black mt-1">
+                Herniated Discs
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-nord13 font-bold text-3xl font-headline">6</span>
+              <span className="text-[10px] font-label uppercase tracking-widest text-nord4 font-black mt-1">
+                Mutt Dogs
               </span>
             </div>
           </div>
@@ -47,9 +68,9 @@ const AboutSection: React.FC = () => {
           <div className="relative group">
             <div className="aspect-square rounded-3xl overflow-hidden border border-nord3/30 shadow-2xl relative z-10">
               <img
-                src="/images/avatar.png"
+                src="/images/thiagobraga-hero-section.jpg"
                 alt="Thiago Braga — Software Engineer"
-                className="w-full h-full object-cover grayscale contrast-110 hover:scale-105 transition-transform duration-1000"
+                className="w-full h-full object-cover saturate-50 contrast-110 ease-in-out hover:scale-105 hover:saturate-100 hover:transition duration-1000"
               />
             </div>
             {/* Decorative elements */}

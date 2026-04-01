@@ -2,23 +2,22 @@ name: thiagobraga
 
 services:
   app:
-    container_name: thiago-web
+    container_name: thiagobraga-app
     build:
       context: .
       dockerfile: .docker/Dockerfile
       target: development
-    ports: ["3040:8080"]
-    volumes: [.:/app, /app/node_modules, /app/dist]
     command: bun run dev
+    volumes: [.:/app, /app/node_modules, /app/dist]
+    networks: [proxy]
     environment:
       NODE_ENV: development
-    networks: [proxy]
     labels:
       traefik.enable: true
-      traefik.http.routers.thiagobraga-dev.rule: Host(`thiagobraga.dev.local`)
-      traefik.http.routers.thiagobraga-dev.entrypoints: websecure
-      traefik.http.routers.thiagobraga-dev.tls: true
-      traefik.http.services.thiagobraga-dev.loadbalancer.server.port: 8080
+      traefik.http.routers.thiago-router.rule: Host(`thiagobraga.dev.local`)
+      traefik.http.routers.thiago-router.entrypoints: websecure
+      traefik.http.routers.thiago-router.tls: true
+      traefik.http.services.thiago-service.loadbalancer.server.port: 8080
 
 networks:
   proxy:

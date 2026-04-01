@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="text-xl tracking-tighter text-nord6 font-headline shrink-0">
           <span className="font-light opacity-70">thiago</span>
-          <span className="font-bold">braga.dev</span>
+          <span className="font-semibold">braga.dev</span>
         </Link>
 
         {/* Nav links */}

@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl animate-fade-up">
         {/* Avatar */}
-        <div className="mb-8 p-0.5 rounded-full bg-nord4/20 backdrop-blur-sm">
+        {/* <div className="mb-8 p-0.5 rounded-full bg-nord4/20 backdrop-blur-sm">
           <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-nord0/50 overflow-hidden">
             <img
               src="/images/avatar.png"
@@ -27,21 +27,21 @@ const HeroSection: React.FC = () => {
               className="w-full h-full object-cover grayscale contrast-125 hover:scale-110 transition-transform duration-700"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Name */}
         <h1 className="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-nord6">
           <span className="opacity-70 font-light">Thiago</span>{' '}
-          <b>Braga</b>
+          <span className="font-semibold">Braga</span>
         </h1>
 
         {/* Subtitle — middle dot (·) separated */}
-        <p className="font-label text-nord4 text-base md:text-lg tracking-widest mb-12 uppercase leading-relaxed">
-          <span className="text-nord8">Creative Musician and Developer</span>
-          <span className="text-nord3 mx-3">·</span>
+        <p className="font-label text-nord4 text-base md:text-lg mb-12 leading-relaxed">
           <span>Dog Lover</span>
           <span className="text-nord3 mx-3">·</span>
-          <span className="text-nord9">Information Security Student</span>
+          <span className="text-nord7">Creative Musician and Developer</span>
+          <span className="text-nord3 mx-3">·</span>
+          <span className="text-nord8">CyberSecurity Student</span>
         </p>
 
         {/* CTA buttons */}
