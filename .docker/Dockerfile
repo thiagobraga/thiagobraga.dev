@@ -1,4 +1,3 @@
-LABEL version="1.0-bun-migration"
 FROM oven/bun:1-alpine AS base
 WORKDIR /app
 
@@ -7,6 +6,9 @@ FROM base AS development
 COPY --chown=bun:bun package.json bun.lockb ./
 RUN bun install
 COPY --chown=bun:bun . .
+# Ensure we have permission to build in dist
+USER root
+RUN mkdir -p /app/dist && chown -R bun:bun /app
 USER bun
 EXPOSE 8080
 CMD ["bun", "run", "dev"]

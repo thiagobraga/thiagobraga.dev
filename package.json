@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "bun@1.2.6",
   "scripts": {
-    "dev": "rm -rf dist && bun --watch server.ts",
+    "dev": "bun --watch server.ts",
     "build": "bunx @tailwindcss/cli -i ./src/index.css -o ./dist/index.css --minify && bun build ./index.html --outdir ./dist --minify --production",
     "build:dev": "bun build ./index.html --outdir ./dist",
     "lint": "eslint .",
