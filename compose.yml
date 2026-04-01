@@ -7,7 +7,8 @@ services:
       context: .
       dockerfile: .docker/Dockerfile
       target: development
-    command: bun run dev
+    pull_policy: if_not_present
+    restart: unless-stopped
     volumes: [.:/app, /app/node_modules, /app/dist]
     networks: [proxy]
     environment:
@@ -17,7 +18,7 @@ services:
       traefik.http.routers.thiago-router.rule: Host(`thiagobraga.dev.local`)
       traefik.http.routers.thiago-router.entrypoints: websecure
       traefik.http.routers.thiago-router.tls: true
-      traefik.http.services.thiago-service.loadbalancer.server.port: 8080
+      traefik.http.services.thiago-service.loadbalancer.server.port: 5173
 
 networks:
   proxy:

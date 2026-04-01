@@ -1,16 +1,19 @@
-FROM oven/bun:1-alpine AS base
+FROM oven/bun:1.1.20-alpine AS base
 WORKDIR /app
 
-# Dev stage
+# development
 FROM base AS development
-RUN apk add --no-cache su-exec && mkdir -p /app/dist
-COPY .docker/entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+COPY --chown=bun:bun .docker/entrypoint.sh /entrypoint.sh
+RUN apk add --no-cache su-exec libstdc++ \
+  && mkdir -p /app/dist \
+  && chmod +x /entrypoint.sh
+COPY --chown=bun:bun . .
+# USER bun
 EXPOSE 8080
-CMD ["bun", "run", "dev"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bun", "dev"]
 
-# Build stage
+# build
 FROM base AS build
 COPY --chown=bun:bun package.json bun.lockb ./
 RUN bun install --frozen-lockfile
@@ -18,7 +21,7 @@ COPY --chown=bun:bun . .
 USER bun
 RUN bun build ./index.html --production --outdir ./dist
 
-# Production stage (optional but good for serving)
+# production
 FROM base AS production
 COPY --from=build /app/dist /app/dist
 USER bun

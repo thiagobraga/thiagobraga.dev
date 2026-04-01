@@ -6,6 +6,7 @@ dist/
 node_modules/
 
 # Files
+.docker/Dockerfile
 .dockerignore
 .env
 .env.*
@@ -13,6 +14,7 @@ node_modules/
 .gitignore
 *.log
 bun-debug.log*
+public/chezmoi
 compose.yml
 docker-compose.yml
 README.md
