@@ -3,10 +3,10 @@ WORKDIR /app
 
 # Dev stage
 FROM base AS development
-COPY --chown=bun:bun . .
-RUN mkdir -p /app/dist \
-  && bun install
-USER bun
+RUN apk add --no-cache su-exec && mkdir -p /app/dist
+COPY .docker/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 8080
 CMD ["bun", "run", "dev"]
 

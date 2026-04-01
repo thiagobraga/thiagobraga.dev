@@ -1,26 +1,18 @@
-# FOLDERS
-node_modules/
-dist/
-dist-ssr/
+# Folders
 .git/
 .github/
 .vscode/
-.docker/
-.idea/
+dist/
+node_modules/
 
-# FILES
+# Files
+.dockerignore
 .env
 .env.*
-!.env.example
+.env.example
 .gitignore
-.DS_Store
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 bun-debug.log*
-README.md
-LICENSE
-Dockerfile
 compose.yml
 docker-compose.yml
+README.md
