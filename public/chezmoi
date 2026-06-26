@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Add .local/bin to PATH
+echo "Adding .local/bin to PATH..."
+export PATH="$HOME/.local/bin:$PATH"
+
+# Install chezmoi
+echo "Installing chezmoi..."
+sh -c "$(wget -qO- get.chezmoi.io/lb)"
+# sh -c "$(curl -fsLS get.chezmoi.io/lb)"
+
+# Initialize chezmoi with dotfiles
+echo "Initializing chezmoi with dotfiles..."
+chezmoi init --apply thiagobraga/dotfiles -S ~/project/dotfiles
+
+echo "Installation complete!"
