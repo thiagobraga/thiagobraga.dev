@@ -342,22 +342,11 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
           {/* Text and info */}
           <div
             className={`
-              relative z-20 flex min-h-72 items-start p-8 md:p-12 lg:p-14
+              relative z-20 flex flex-col min-h-72 p-8 md:p-12 lg:p-14
               ${isReversed ? 'md:order-1' : 'md:order-2'}
             `}
           >
-            <div className="project-card-details-content w-full">
-              <div className="project-card-tags-container flex gap-3 mb-7 flex-wrap">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag.label}
-                    className={`project-card-tag px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border ${tag.color}`}
-                  >
-                    {tag.label}
-                  </span>
-                ))}
-              </div>
-
+            <div className="project-card-details-content flex-1">
               <h3 className="project-card-title font-headline text-3xl md:text-4xl font-extrabold mb-6 text-nord6 tracking-tighter">
                 {project.title}
               </h3>
@@ -371,6 +360,17 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
                 {project.linkLabel}
                 <span className="material-symbols-outlined text-sm">arrow_right_alt</span>
               </a>
+            </div>
+
+            <div className="project-card-tags-container flex gap-3 mt-8 flex-wrap pt-6 border-t border-nord3/30">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag.label}
+                  className={`project-card-tag px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border ${tag.color}`}
+                >
+                  {tag.label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
