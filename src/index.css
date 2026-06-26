@@ -24,9 +24,9 @@
   --color-am-green: #6DC96B;
 
   /* Lodo Records brand colors */
-  --color-lr-green: #7DB87A;
-  --color-lr-mud: #C49A72;
-  --color-lr-beige: #D4C4A0;
+  --color-lr-green: #6BA668;
+  --color-lr-mud: #A88A5F;
+  --color-lr-beige: #D8D0B8;
 
   /* Semantic Nord Aliases */
   --color-surface: #2E3440;
@@ -274,8 +274,8 @@
 }
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
-  backdrop-filter: blur(12px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
