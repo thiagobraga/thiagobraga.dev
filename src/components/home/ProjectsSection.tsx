@@ -93,9 +93,9 @@ const PROJECTS: Project[] = [
     description:
       'An ecommerce platform for Lodo Records music label, featuring a catalog of albums, merchandise, and exclusive content.',
     tags: [
-      { label: 'Ecommerce', color: 'bg-lr-green/20 text-lr-green border-lr-green/50' },
-      { label: 'Music', color: 'bg-lr-mud/20 text-lr-mud border-lr-mud/30' },
-      { label: 'Label', color: 'bg-lr-beige/20 text-lr-beige border-lr-beige/30' },
+      { label: 'Ecommerce', color: 'bg-[#425450] text-[#efebe4] border-[#2d3c39]' },
+      { label: 'Music', color: 'bg-[#4f534a] text-[#efebe4] border-[#62655a]' },
+      { label: 'Label', color: 'bg-[#efebe4] text-[#6c6a44] border-[#6b6856]' },
     ],
     images: ['/images/lodo-records.png'],
     linkLabel: 'Read More...',
@@ -284,7 +284,7 @@ const ProjectImageCarousel: React.FC<{ images: string[]; title: string }> = ({ i
           key={img}
           src={img}
           alt={`${title} - slide ${idx}`}
-          className={`carousel-slide-img absolute inset-0 w-full h-full object-cover object-top grayscale-0 group-hover:brightness-110 transition-all duration-1000 ease-in-out ${
+          className={`carousel-slide-img absolute inset-0 w-full h-full object-cover object-top grayscale-0 group-hover:brightness-100 transition-all duration-1000 ease-in-out ${
             idx === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
         />
@@ -572,7 +572,7 @@ const ProjectsSection: React.FC = () => {
               {SKILL_GROUPS.map(({ title, skills }) => (
                 <div
                   key={title}
-                  className="glass-card rounded-3xl p-6 transition-all hover:border-nord8/20 hover:brightness-110"
+                  className="glass-card rounded-3xl p-6 transition-all hover:border-nord8/20 hover:brightness-100"
                 >
                   <h4 className="mb-5 text-[11px] font-black uppercase tracking-[0.32em] text-nord4/50">
                     {title}
