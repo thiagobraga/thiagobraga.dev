@@ -1,0 +1,20 @@
+# Folders
+.git/
+.github/
+.vscode/
+dist/
+node_modules/
+
+# Files
+.docker/Dockerfile
+.dockerignore
+.env
+.env.*
+.env.example
+.gitignore
+*.log
+bun-debug.log*
+public/chezmoi
+compose.yml
+docker-compose.yml
+README.md

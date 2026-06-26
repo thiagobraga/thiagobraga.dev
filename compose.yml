@@ -1,0 +1,24 @@
+name: thiagobraga
+
+services:
+  app:
+    container_name: thiagobraga-app
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      target: development
+    pull_policy: if_not_present
+    volumes: [.:/app, /app/node_modules, /app/dist]
+    networks: [proxy]
+    environment:
+      NODE_ENV: development
+    labels:
+      traefik.enable: true
+      traefik.http.routers.thiago-router.rule: Host(`thiagobraga.dev.local`)
+      traefik.http.routers.thiago-router.entrypoints: websecure
+      traefik.http.routers.thiago-router.tls: true
+      traefik.http.services.thiago-service.loadbalancer.server.port: 5173
+
+networks:
+  proxy:
+    external: true
