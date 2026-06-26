@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useLenis } from 'lenis/react';
 
@@ -293,28 +292,15 @@ const HeroSection: React.FC = () => {
         {after}
       </>
     );
-=======
-import React from 'react';
-
-const HeroSection: React.FC = () => {
-  const handleScroll = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
->>>>>>> origin/main
   };
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 overflow-hidden bg-nord0">
       {/* Background image + gradient overlay */}
-<<<<<<< HEAD
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div
           ref={bgRef}
           className="absolute -top-[15%] -bottom-[15%] inset-x-0 bg-no-repeat bg-cover bg-center grayscale contrast-125 brightness-50"
-=======
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center grayscale contrast-125 brightness-50"
->>>>>>> origin/main
           style={{ backgroundImage: "url('/images/misty-forest.png')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-nord0/40 via-nord0/20 to-nord0" />
@@ -339,7 +325,6 @@ const HeroSection: React.FC = () => {
           <span className="font-semibold">Braga</span>
         </h1>
 
-<<<<<<< HEAD
         {/* Subtitle — typewriter animation */}
         <p className="font-label text-nord4 text-base md:text-lg mb-12 leading-relaxed">
           {displayTexts.map((text, i) => (
@@ -350,45 +335,8 @@ const HeroSection: React.FC = () => {
               </span>
             </React.Fragment>
           ))}
-=======
-        {/* Subtitle — middle dot (·) separated */}
-        <p className="font-label text-nord4 text-base md:text-lg mb-12 leading-relaxed">
-          <span>Dog Lover</span>
-          <span className="text-nord3 mx-3">·</span>
-          <span className="text-nord7">Creative Musician and Developer</span>
-          <span className="text-nord3 mx-3">·</span>
-          <span className="text-nord8">CyberSecurity Student</span>
->>>>>>> origin/main
         </p>
-
-        {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row gap-5">
-          <button
-            id="hero-explore-btn"
-            onClick={() => handleScroll('projects')}
-            className="px-10 py-4 bg-nord13 text-nord0 font-headline font-bold rounded-lg hover:bg-nord13/90 transition-all active:scale-95 shadow-lg shadow-nord13/10"
-          >
-            Explore
-          </button>
-          <button
-            id="hero-contact-btn"
-            onClick={() => handleScroll('about')}
-            className="px-10 py-4 border border-nord3 text-nord6 font-headline font-bold rounded-lg hover:bg-nord1 transition-all active:scale-95 flex items-center gap-2"
-          >
-            Get in Touch
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
       </div>
-
-<<<<<<< HEAD
-=======
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-nord3 flex flex-col items-center gap-2">
-        <span className="text-[10px] font-label uppercase tracking-widest">Scroll to discover</span>
-        <span className="material-symbols-outlined animate-scroll-bounce">keyboard_double_arrow_down</span>
-      </div>
->>>>>>> origin/main
     </section>
   );
 };
