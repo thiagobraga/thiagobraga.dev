@@ -1,67 +1,135 @@
-import React from 'react';
-import { TIMELINE_DATA } from '@/data/timeline';
+import React, { useState } from 'react';
+import { TIMELINE_DATA, type TimelineCompany } from '@/data/timeline';
 
 const CareerSection: React.FC = () => {
+  const [selected, setSelected] = useState<TimelineCompany>(TIMELINE_DATA[0]);
+  const [animating, setAnimating] = useState(false);
+
+  const select = (company: TimelineCompany) => {
+    if (company.company === selected.company) return;
+    setAnimating(true);
+    setTimeout(() => {
+      setSelected(company);
+      setAnimating(false);
+    }, 140);
+  };
 
   return (
-    <section id="career" className="py-24 px-6 md:px-20 bg-nord0 overflow-hidden relative">
+    <section id="career" className="py-24 px-6 md:px-20 bg-nord0 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+
+        {/* Heading */}
         <h2 className="font-mono text-5xl md:text-7xl font-extrabold tracking-tighter text-nord6 mb-16">
           <code className="section-heading-code">
-            <span className="opacity-70 font-light">cd</span> <b>career</b>
+            <span className="opacity-50 font-light">tail -f</span> <b>career</b>
           </code>
         </h2>
 
-        {/* Career Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TIMELINE_DATA.map((company, companyIdx) => (
-            <div
-              key={`${company.company}-${companyIdx}`}
-              className="min-w-[320px] md:min-w-[420px] max-w-[420px] snap-center shrink-0 flex flex-col"
-            >
-              <div className="bg-nord1/50 backdrop-blur-md border border-nord3/40 rounded-2xl overflow-hidden h-full hover:border-nord8/40 transition-colors group">
-                {/* Company header */}
-                <div className="px-6 pt-6 pb-4 border-b border-nord3/30 bg-gradient-to-br from-nord1/80 to-nord0/80">
-                  <h3 className="font-headline text-xl font-bold text-nord8 mb-1">
+        {/* Two-panel layout */}
+        <div className="flex flex-col lg:flex-row gap-0 lg:gap-0 border border-nord3/30 rounded-sm overflow-hidden">
+
+          {/* Left: company list */}
+          <div className="lg:w-2/5 border-b lg:border-b-0 lg:border-r border-nord3/30">
+            {TIMELINE_DATA.map((company) => {
+              const isActive = selected.company === company.company;
+              return (
+                <button
+                  key={company.company}
+                  onClick={() => select(company)}
+                  onMouseEnter={() => select(company)}
+                  className={[
+                    'w-full text-left px-6 py-5 border-b border-nord3/20 last:border-b-0 transition-all duration-150 cursor-pointer group',
+                    isActive
+                      ? 'bg-nord1/80 border-l-2 border-l-nord8'
+                      : 'hover:bg-nord1/40 border-l-2 border-l-transparent',
+                  ].join(' ')}
+                >
+                  <span className={[
+                    'block font-headline font-bold text-sm mb-1 transition-colors duration-150',
+                    isActive ? 'text-nord8' : 'text-nord5 group-hover:text-nord6',
+                  ].join(' ')}>
                     {company.company}
-                  </h3>
-                  <span className="text-xs uppercase tracking-widest text-nord4/60 font-bold">
+                  </span>
+                  <span className="block font-mono text-[11px] text-nord4/50">
                     {company.startDate} · {company.endDate}
                   </span>
-                </div>
+                  <span className="block font-mono text-[11px] text-nord4/40 mt-0.5">
+                    {company.roles.map(r => r.title).join(' · ')}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-                {/* Roles */}
-                <div className="px-6 py-6 space-y-4 flex-1 max-h-96 overflow-y-auto">
-                  {company.roles.map((role, roleIdx) => (
-                    <div key={roleIdx} className="group/role">
-                      <h4 className="font-bold text-nord6 text-sm mb-2 group-hover/role:text-nord8 transition-colors">
+          {/* Right: detail panel */}
+          <div className="lg:w-3/5 bg-nord1/30 p-8 lg:p-10">
+            <div
+              className={[
+                'transition-all duration-150',
+                animating ? 'opacity-0 translate-y-1' : 'opacity-100 translate-y-0',
+              ].join(' ')}
+            >
+              {/* Company header */}
+              <div className="mb-8">
+                <h3 className="font-headline text-2xl font-bold text-nord6 mb-1">
+                  {selected.company}
+                </h3>
+                <span className="font-mono text-[11px] text-nord8/60 uppercase tracking-widest">
+                  {selected.startDate} — {selected.endDate}
+                </span>
+              </div>
+
+              {/* Roles */}
+              <div className="space-y-8">
+                {selected.roles.map((role, idx) => (
+                  <div key={idx}>
+                    {/* Role title + dates */}
+                    <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                      <h4 className="font-headline font-bold text-nord8 text-base">
                         {role.title}
                       </h4>
-                      <span className="text-xs text-nord4/60 font-mono block mb-2">
+                      <span className="font-mono text-[11px] text-nord4/50">
                         {role.startDate} – {role.endDate}
                       </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {role.skills.slice(0, 3).map((skill) => (
-                          <span
-                            key={skill}
-                            className="text-[10px] px-2 py-1 bg-nord3/30 text-nord4/80 rounded-full font-mono uppercase tracking-tight"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                        {role.skills.length > 3 && (
-                          <span className="text-[10px] px-2 py-1 bg-nord3/20 text-nord4/60 rounded-full font-mono">
-                            +{role.skills.length - 3}
-                          </span>
-                        )}
-                      </div>
+                      {role.location && (
+                        <span className="font-mono text-[11px] text-nord4/40">
+                          {role.location}
+                        </span>
+                      )}
                     </div>
-                  ))}
-                </div>
+
+                    {/* Descriptions */}
+                    <ul className="space-y-1.5 mb-4">
+                      {role.description.map((line, i) => (
+                        <li key={i} className="flex gap-3 text-sm text-nord4/80 leading-relaxed">
+                          <span className="font-mono text-nord3 mt-0.5 shrink-0">›</span>
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Skills */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {role.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-[10px] px-2.5 py-1 bg-nord3/25 text-nord4/70 border border-nord3/30 rounded-full font-mono uppercase tracking-tight"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Divider between roles */}
+                    {idx < selected.roles.length - 1 && (
+                      <div className="mt-8 border-t border-nord3/20" />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+
         </div>
       </div>
     </section>
