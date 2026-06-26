@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# thiagobraga.dev
 
-## Project info
+A premium, Nordic-inspired personal portfolio and blog built for 2026. This project features a sophisticated "Nord" design system, a lightning-fast build pipeline with Tailwind CSS v4, and a modular architecture designed for high performance and visual excellence.
 
-**URL**: https://lovable.dev/projects/4c4441ed-010b-4e31-81ee-0bcbdd0af7bd
+## Features
 
-## How can I edit this code?
+- **Nordic Design System**: A meticulously crafted aesthetic based on the Nord color palette, featuring glassmorphism, smooth animations (`fade-up`, `scroll-bounce`), and premium typography (Plus Jakarta Sans, Inter, Manrope).
+- **Tailwind CSS v4**: Leveraging the latest CSS-first configuration engine for zero-runtime overhead and simplified styling.
+- **Vite & React (SWC)**: A modern, high-performance development environment with Hot Module Replacement (HMR).
+- **Supabase Integration**: Robust backend-as-a-service for managing blog posts, projects, and author data.
+- **Dockerized Workflow**: Fully containerized development environment for consistency across all platforms.
+- **Chezmoi Automation**: Integrated dotfile and environment provisioning script for seamless developer onboarding.
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4c4441ed-010b-4e31-81ee-0bcbdd0af7bd) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+├── .docker/          # Docker system configuration
+├── public/           # Static assets (images, favicon, etc.)
+│   ├── images/       # Nordic-themed project and pet assets
+│   └── chezmoi       # Automated environment setup script
+├── src/
+│   ├── components/   # Atomic design components (UI, Layout, Home)
+│   ├── hooks/        # Custom React hooks (Supabase, UI logic)
+│   ├── integrations/ # Supabase client and database types
+│   ├── lib/          # Utilities and mock data for local dev
+│   └── pages/        # Main application routes (Index, Blog, Admin)
+└── supabase/         # Local Supabase configuration and schemas
 ```
 
-**Edit a file directly in GitHub**
+## Prerequisites
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Bun**: v1.2.6 or later (Recommended package manager)
+- **Docker & Docker Compose**: For containerized development
+- **Supabase CLI**: For database management and migrations
 
-**Use GitHub Codespaces**
+## Install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/thiagobraga/thiagobraga.dev.git
+    cd thiagobraga.dev
+    ```
 
-## What technologies are used for this project?
+2.  **Install dependencies**:
+    ```bash
+    bun install
+    ```
 
-This project is built with:
+3.  **Set up environment variables**:
+    ```bash
+    cp .env.example .env
+    # Add your Supabase URL and Anon Key
+    ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4.  **Run with Docker**:
+    ```bash
+    docker compose up -d
+    ```
 
-## How can I deploy this project?
+5.  **Run locally (Alternative)**:
+    ```bash
+    bun run dev
+    ```
 
-Simply open [Lovable](https://lovable.dev/projects/4c4441ed-010b-4e31-81ee-0bcbdd0af7bd) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+*Built with precision and a passion for minimalist, high-performance web experiences.*
 
-Yes, you can!
+## Stack
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+| Resource | Status |
+|----------|--------|
+| [React](https://react.dev) | `^18.3.1` |
+| [TypeScript](https://www.typescriptlang.org) | `^5.5.3` |
+| [Vite](https://vite.dev) | `^6.0.0` |
+| [Vitest](https://vitest.dev) | `^4.1.6` |
+| [Tailwind CSS](https://tailwindcss.com) | `^4.0.0` |
+| [Radix UI](https://www.radix-ui.com) | `^1.1.2` |
+| [TanStack Query](https://tanstack.com/query) | `^5.56.2` |
+| [Zod](https://zod.dev) | `^3.23.8` |
+| [Bun](https://bun.sh) | `1.2.6` |
+| [Docker](https://www.docker.com) | Yes |
+| [Docker Compose](https://docs.docker.com/compose/) | Yes |
+| Entrypoint | Yes |
+| Image | `oven/bun:1.1.20-debian` |
+| AI Agents | `AGENTS`, `GEMINI` |
