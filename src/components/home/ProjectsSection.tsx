@@ -121,9 +121,9 @@ const PROJECTS: Project[] = [
     description:
       'A pet app to manage your pets, track their health, and much more.',
     tags: [
-      { label: 'Pets', color: 'bg-[#fd717f] text-[#ffdde0] border-[#bca49e]' },
-      { label: 'Adoption', color: 'bg-nord14/20 text-nord14 border-nord14/30' },
-      { label: 'Platform', color: 'bg-nord9/20 text-nord9 border-nord9/30' },
+      { label: 'Pets', color: 'bg-[#fd717f] text-[#ffffff] border-[#fbb3bb]' },
+      { label: 'UI', color: 'bg-[#d08770] text-[#ffffff] border-[#e4c593]' },
+      { label: 'UX', color: 'bg-[#fdfdfd] text-[#b66112] border-[#fdddd3]' },
     ],
     images: ['/images/petsy.png'],
     linkLabel: 'Read More...',
