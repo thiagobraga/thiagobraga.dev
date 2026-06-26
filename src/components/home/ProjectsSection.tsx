@@ -362,7 +362,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
               </a>
             </div>
 
-            <div className="project-card-tags-container flex gap-3 mt-8 flex-wrap pt-6 border-t border-nord3/30">
+            <div className="project-card-tags-container flex gap-3 mt-8 flex-wrap">
               {project.tags.map((tag) => (
                 <span
                   key={tag.label}
