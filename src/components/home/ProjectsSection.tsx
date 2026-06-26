@@ -108,8 +108,8 @@ const PROJECTS: Project[] = [
       'A set of UI improvements for OpenClaw, a web application for managing and monitoring cloud infrastructure.',
     tags: [
       { label: 'UI', color: 'bg-nord11/20 text-nord11 border-nord11/30' },
-      { label: 'Cloud', color: 'bg-nord12/20 text-nord12 border-nord12/30' },
       { label: 'UX', color: 'bg-nord15/20 text-nord15 border-nord15/30' },
+      { label: 'AI', color: 'bg-nord9/20 text-nord9 border-nord9/30' },
     ],
     images: ['/images/openclaw.png'],
     linkLabel: 'Read More...',
