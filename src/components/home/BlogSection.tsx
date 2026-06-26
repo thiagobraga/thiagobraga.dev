@@ -5,24 +5,24 @@ import FeaturedPostsList from './FeaturedPostsList';
 import RecentPostsList from './RecentPostsList';
 
 const CATEGORY_COLORS: Record<string, string> = {
-  DevOps:   'text-nord8',
+  DevOps: 'text-nord8',
   Security: 'text-nord15',
-  Cloud:    'text-nord14',
-  Dev:      'text-nord9',
+  Cloud: 'text-nord14',
+  Dev: 'text-nord9',
 };
 
 const CARD_HOVER_COLORS: Record<string, string> = {
-  DevOps:   'group-hover:text-nord8',
+  DevOps: 'group-hover:text-nord8',
   Security: 'group-hover:text-nord15',
-  Cloud:    'group-hover:text-nord14',
-  Dev:      'group-hover:text-nord9',
+  Cloud: 'group-hover:text-nord14',
+  Dev: 'group-hover:text-nord9',
 };
 
 const READ_MORE_COLORS: Record<string, string> = {
-  DevOps:   'hover:text-nord8',
+  DevOps: 'hover:text-nord8',
   Security: 'hover:text-nord15',
-  Cloud:    'hover:text-nord14',
-  Dev:      'hover:text-nord9',
+  Cloud: 'hover:text-nord14',
+  Dev: 'hover:text-nord9',
 };
 
 function formatShortDate(dateStr: string): string {
@@ -44,7 +44,7 @@ const BlogSection: React.FC = () => {
         {/* ── Section header ── */}
         <h2 className="font-headline text-4xl font-bold mb-16 text-center text-nord6">
           <code className="section-heading-code">
-            <span className="opacity-70 font-light">GET</span> <b>/posts</b>
+            GET <b>/posts</b>
           </code>
         </h2>
 

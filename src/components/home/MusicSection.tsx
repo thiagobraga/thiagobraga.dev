@@ -73,11 +73,8 @@ const MusicSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
         {/* Header */}
         <div className="flex items-center gap-5 mb-16">
-          <span className="material-symbols-outlined text-nord13 text-4xl">graphic_eq</span>
           <h2 className="font-headline text-4xl font-bold text-nord6">
-            <code className="section-heading-code">
-              <span className="opacity-70 font-light">What</span> <b>I'm Listening To</b>
-            </code>
+            <code className="section-heading-code">--listen</code>
           </h2>
         </div>
 

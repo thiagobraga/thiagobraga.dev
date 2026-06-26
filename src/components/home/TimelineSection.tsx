@@ -16,10 +16,10 @@ const TimelineSection: React.FC = () => {
     <section id="timeline" className="py-24 px-6 md:px-20 bg-nord0/50 overflow-hidden relative">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-nord3/30 pb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-12 gap-6">
           <h2 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-nord6">
             <code className="section-heading-code">
-              <span className="opacity-70 font-light">tail -f</span> <b>career</b>
+              <span className="opacity-70 font-light">tail</span> <b>career</b>
             </code>
           </h2>
           <div className="flex items-center gap-6">

@@ -38,7 +38,7 @@ const AboutSection: React.FC = () => {
           <div className="min-w-0 order-2 sm:order-1">
             <div className="space-y-6 text-nord4/80 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
             <p>
-              I am the intersection - where creativity meets technology, guided by a warm heart.
+              I am the intersection between creativity and technology, guided by a warm heart.
               A disruptive thinker who solves complex IT problems with elegant solutions.
               I try to make the world better - especially for dogs.
             </p>
@@ -66,12 +66,6 @@ const AboutSection: React.FC = () => {
               <span className="text-nord8 font-bold text-3xl font-headline">16+</span>
               <span className="text-[10px] font-label uppercase tracking-widest text-nord4 font-black mt-1">
                 Years Experience
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-nord15 font-bold text-3xl font-headline">50 L+</span>
-              <span className="text-[10px] font-label uppercase tracking-widest text-nord4 font-black mt-1">
-                Coffee Consumed
               </span>
             </div>
             <div className="flex flex-col">
