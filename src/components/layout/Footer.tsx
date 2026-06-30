@@ -45,6 +45,7 @@ const SITE_LINKS = [
   { label: 'Home',     to: '/#hero' },
   { label: 'About',    to: '/#about' },
   { label: 'Projects', to: '/#projects' },
+  { label: 'Skills',   to: '/#skills' },
   { label: 'Pets',     to: '/#pets' },
 ];
 

@@ -23,13 +23,16 @@ const IMAGE_POSITION_CLASSES: Record<NonNullable<Project['imagePosition']>, stri
   bottom: 'object-bottom',
 };
 
+const withAiAssistance = (description: string) => `${description} Built with help from Claude and Codex.`;
+
 const PROJECTS: Project[] = [
   {
     title: 'ABNT Maker',
-    description:
+    description: withAiAssistance(
       `A project I wrote to help me create ABNT formatted academic papers.
       It generates the documents as PDF or DOCX, and provides a simple
-      interface for managing the sections and configurations.`,
+      interface for managing the sections and configurations.`
+    ),
     tags: [
       { label: 'Academic', color: 'bg-[#2b3c57] text-[#ffffff] border-[#000000]/10' },
       { label: 'Automation', color: 'bg-nord0 text-[#efebe4] border-nord0/10' },
@@ -43,10 +46,11 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'AgentMeter',
-    description:
+    description: withAiAssistance(
       `AgentMeter is a GNOME shell extension that shows token usage for
       Claude, Codex, and more. Still on development. This idea comes from
-      CodexBar for MacOS (because I don't have a MacOS).`,
+      CodexBar for MacOS (because I don't have a MacOS).`
+    ),
     tags: [
       { label: 'Ubuntu', color: 'bg-[#343d43] text-[#d4d7d9] border-[#474e53]' },
       { label: 'GNOME', color: 'bg-[#71ac81] text-[#3c553e] border-[#48635b]' },
@@ -62,11 +66,12 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Lodo Records',
-    description:
+    description: withAiAssistance(
       `Lodo Records is a record label focused on underground music.
       The name is an idea of a friend of mine, and the website is an
       ecommerce platform for the label, with clothing, music, and
-      other products about the label and its artists.`,
+      other products about the label and its artists.`
+    ),
     tags: [
       { label: 'Ecommerce', color: 'bg-[#425450] text-[#efebe4] border-[#2d3c39]' },
       { label: 'Music', color: 'bg-[#4f534a] text-[#efebe4] border-[#62655a]' },
@@ -81,8 +86,9 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'OpenClaw UI improvements',
-    description:
-      `A set of UI improvements I made - using AI of course - for OpenClaw.`,
+    description: withAiAssistance(
+      `A set of UI improvements I made - using AI of course - for OpenClaw.`
+    ),
     tags: [
       { label: 'UI', color: 'bg-[#fd565a] text-[#ffffff] border-[#fd565a]' },
       { label: 'UX', color: 'bg-nord15/20 text-nord15 border-nord15/30' },
@@ -97,12 +103,13 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Petsy',
-    description:
+    description: withAiAssistance(
       `Another idea to solve my real problems. Petsy aims to help me
       to manage the life of my 6 dogs and others that I take care of.
       It has a simple interface to manage the dogs, their health,
       and their activities. Still in development, but I hope to
-      make it available for other dog owners.`,
+      make it available for other dog owners.`
+    ),
     tags: [
       { label: 'Pets', color: 'bg-[#fd717f] text-[#ffffff] border-[#fd717f]' },
       { label: 'UI', color: 'bg-[#fdfdfd] text-[#fd717f] border-[#fdddd3]' },
@@ -117,12 +124,13 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Planner',
-    description:
+    description: withAiAssistance(
       `Maybe just another To-do app, but the main idea behind Planner is to
       have a todo app that looks like a real bullet journal. The app is
       built with React, TypeScript, and Tailwind CSS, and it uses local
       storage to save the data. It has a simple interface to manage
-      tasks, projects, and notes.`,
+      tasks, projects, and notes.`
+    ),
     tags: [
       { label: 'Planner', color: 'bg-[#52534d] text-[#ebe6de] border-[#52534d]/30' },
       { label: 'UI', color: 'bg-[#52534d] text-[#ebe6de] border-[#52534d]/30' },
@@ -136,8 +144,9 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Revel HC',
-    description:
+    description: withAiAssistance(
       `Website for band Revel, from Bauru, Sao Paulo, Brazil. The website features a discography, tour dates, and a blog with news and updates about the band.`,
+    ),
     tags: [
       { label: 'Website', color: 'bg-nord8/20 text-nord8 border-nord8/30' },
       { label: 'Music', color: 'bg-nord13/20 text-nord13 border-nord13/30' },
@@ -152,10 +161,11 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Sociopata',
-    description:
+    description: withAiAssistance(
       `I'm developing the new website for my band Sociopata,
       a crossover thrash metal band, centered around
-      the band identity and embedded music experience.`,
+      the band identity and embedded music experience.`
+    ),
     tags: [
       { label: 'Website', color: 'bg-[#73312d] text-[#bfb8af] border-[#732c26]' },
       { label: 'Music', color: 'bg-[#8a7d6e] text-[#3c3834] border-[#8a7d6e]' },
@@ -169,9 +179,10 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'thiagobraga.dev',
-    description:
+    description: withAiAssistance(
       `This website. My personal portfolio website, built with React, TypeScript,
-      Tailwind CSS, and GSAP. It features a blog, a portfolio, and a music section.`,
+      Tailwind CSS, and GSAP. It features a blog, a portfolio, and a music section.`
+    ),
     tags: [
       { label: 'Portfolio', color: 'bg-nord8/20 text-nord8 border-nord8/30' },
       { label: 'React', color: 'bg-nord9/20 text-nord9 border-nord9/30' },
