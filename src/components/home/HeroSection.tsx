@@ -35,7 +35,7 @@ const GROUPS: Group[] = [
   {
     key: 'petLover',
     color: 'text-nord13',
-    items: ['Dog Lover', 'Dog & Cat Lover', 'Pet Lover', 'Pet Father'],
+    items: ['Dog Lover', 'Dog & Cat Lover', 'Pet Lover', 'Pet Parent'],
   },
   {
     key: 'cybersecurity',
@@ -239,7 +239,7 @@ const HeroSection: React.FC = () => {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(180deg, rgba(46,52,64,0) 0%, rgba(46,52,64,0.015) 3.3%, rgba(46,52,64,0.03) 6.7%, rgba(46,52,64,0.05) 10%, rgba(46,52,64,0.07) 13.3%, rgba(46,52,64,0.09) 16.7%, rgba(46,52,64,0.12) 20%, rgba(46,52,64,0.15) 23.3%, rgba(46,52,64,0.19) 26.7%, rgba(46,52,64,0.23) 30%, rgba(46,52,64,0.27) 33.3%, rgba(46,52,64,0.32) 36.7%, rgba(46,52,64,0.37) 40%, rgba(46,52,64,0.42) 43.3%, rgba(46,52,64,0.47) 46.7%, rgba(46,52,64,0.52) 50%, rgba(46,52,64,0.57) 53.3%, rgba(46,52,64,0.62) 56.7%, rgba(46,52,64,0.66) 60%, rgba(46,52,64,0.70) 63.3%, rgba(46,52,64,0.74) 66.7%, rgba(46,52,64,0.77) 70%, rgba(46,52,64,0.80) 73.3%, rgba(46,52,64,0.83) 76.7%, rgba(46,52,64,0.85) 80%, rgba(46,52,64,0.88) 83.3%, rgba(46,52,64,0.90) 86.7%, rgba(46,52,64,0.93) 90%, rgba(46,52,64,0.96) 93.3%, rgba(46,52,64,0.98) 96.7%, #2e3440 100%)',
+              'linear-gradient(rgba(46, 52, 64, 0) 0%, rgba(46, 52, 64, 0) 70%, rgba(46, 52, 64, 0.15) 75%, rgba(46, 52, 64, 0.35) 80%, rgba(46, 52, 64, 0.55) 85%, rgba(46, 52, 64, 0.75) 90%, rgba(46, 52, 64, 0.9) 95%, rgb(46, 52, 64) 100%)',
           }}
         />
       </div>
