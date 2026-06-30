@@ -66,7 +66,7 @@ const BlogSection: React.FC = () => {
                 <div
                   key={post.id}
                   className={[
-                    'group bg-nord1 rounded-2xl border border-nord3/30 p-8 hover:bg-nord2 transition-all',
+                    'group bg-nord1 rounded-2xl border border-nord3/30 p-8 hover:bg-nord2 transition-colors',
                     idx === 0 ? 'sm:row-span-2 lg:row-span-1' : '',
                   ].join(' ')}
                 >
@@ -86,7 +86,7 @@ const BlogSection: React.FC = () => {
                   </p>
                   <Link
                     to={`/blog/${post.id}`}
-                    className={`inline-flex items-center gap-2 text-sm font-bold text-nord6 transition-all ${readMoreColor}`}
+                    className={`inline-flex items-center gap-2 text-sm font-bold text-nord6 transition-colors ${readMoreColor}`}
                   >
                     Read more
                     <span className="material-symbols-outlined text-xs">east</span>

@@ -118,7 +118,7 @@ const Author: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post) => (
               <Link to={`/blog/${post.id}`} key={post.id} className="group">
-                <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all group-hover:shadow-lg">
+                <div className="bg-white rounded-lg overflow-hidden shadow-md transition-shadow group-hover:shadow-lg">
                   <div className="aspect-video overflow-hidden">
                     <img
                       src={post.image}

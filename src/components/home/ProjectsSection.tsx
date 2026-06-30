@@ -239,7 +239,7 @@ const ProjectImageCarousel: React.FC<{ images: string[]; title: string; imagePos
             <button
               key={idx}
               onClick={() => setIndex(idx)}
-              className={`carousel-dot-btn w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${idx === index
+              className={`carousel-dot-btn w-2.5 h-2.5 rounded-full transition-[colors,transform] duration-300 cursor-pointer ${idx === index
                 ? 'bg-nord8 scale-110 shadow-md shadow-nord8/25'
                 : 'bg-nord4/40 hover:bg-nord4/70 hover:scale-105'
                 }`}
@@ -301,7 +301,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
               </p>
               <a
                 href={project.linkTo}
-                className={`project-card-link inline-flex items-center gap-4 font-black uppercase tracking-widest text-xs text-shadow-md hover:gap-6 transition-all ${project.linkColor}`}
+                className={`project-card-link inline-flex items-center gap-4 font-black uppercase tracking-widest text-xs text-shadow-md hover:gap-6 transition-[gap] ${project.linkColor}`}
               >
                 {project.linkLabel}
                 <span className="material-symbols-outlined text-sm">arrow_right_alt</span>

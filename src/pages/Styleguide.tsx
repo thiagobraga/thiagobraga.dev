@@ -117,19 +117,19 @@ const Styleguide: React.FC = () => {
           {/* Buttons */}
           <h3 className="font-headline text-xl font-bold text-nord6 mb-6">Buttons</h3>
           <div className="flex flex-wrap gap-4 mb-16">
-            <button id="sg-btn-primary" className="px-8 py-3 bg-nord13 text-nord0 font-headline font-bold rounded-lg hover:bg-nord13/90 transition-all">
+            <button id="sg-btn-primary" className="px-8 py-3 bg-nord13 text-nord0 font-headline font-bold rounded-lg hover:bg-nord13/90 transition-colors">
               Primary
             </button>
-            <button id="sg-btn-secondary" className="px-8 py-3 bg-nord10 text-nord6 font-headline font-bold rounded-lg hover:bg-nord10/80 transition-all">
+            <button id="sg-btn-secondary" className="px-8 py-3 bg-nord10 text-nord6 font-headline font-bold rounded-lg hover:bg-nord10/80 transition-colors">
               Secondary
             </button>
-            <button id="sg-btn-ghost" className="px-8 py-3 border border-nord3 text-nord6 font-headline font-bold rounded-lg hover:bg-nord1 transition-all">
+            <button id="sg-btn-ghost" className="px-8 py-3 border border-nord3 text-nord6 font-headline font-bold rounded-lg hover:bg-nord1 transition-colors">
               Ghost
             </button>
-            <button id="sg-btn-danger" className="px-8 py-3 bg-nord11/20 border border-nord11/40 text-nord11 font-headline font-bold rounded-lg hover:bg-nord11/30 transition-all">
+            <button id="sg-btn-danger" className="px-8 py-3 bg-nord11/20 border border-nord11/40 text-nord11 font-headline font-bold rounded-lg hover:bg-nord11/30 transition-colors">
               Danger
             </button>
-            <button id="sg-btn-pill" className="px-8 py-3 bg-nord1 border border-nord3/30 text-nord8 font-label font-bold rounded-full text-sm hover:border-nord8/50 transition-all">
+            <button id="sg-btn-pill" className="px-8 py-3 bg-nord1 border border-nord3/30 text-nord8 font-label font-bold rounded-full text-sm hover:border-nord8/50 transition-colors">
               Pill Button
             </button>
           </div>
@@ -155,7 +155,7 @@ const Styleguide: React.FC = () => {
           <h3 className="font-headline text-xl font-bold text-nord6 mb-6">Cards</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {/* Standard */}
-            <div className="bg-nord1 border border-nord3/30 rounded-2xl p-6 hover:bg-nord2 transition-all">
+            <div className="bg-nord1 border border-nord3/30 rounded-2xl p-6 hover:bg-nord2 transition-colors">
               <span className="text-[10px] font-black uppercase tracking-widest text-nord8 mb-4 block">Card Default</span>
               <h4 className="font-headline font-bold text-nord6 mb-3">Post Title Here</h4>
               <p className="text-nord4/70 text-sm leading-relaxed">Short excerpt of the content that would appear in a blog card.</p>

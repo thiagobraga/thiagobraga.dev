@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label={label}
                   title={label}
-                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-nord3/40 bg-nord0/40 text-nord4/80 transition-all hover:-translate-y-1"
+                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-nord3/40 bg-nord0/40 text-nord4/80 transition-transform hover:-translate-y-1"
                   style={{
                     '--hover-color': hoverColor,
                     '--hover-bg': hoverBg,

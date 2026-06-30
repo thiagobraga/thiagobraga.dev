@@ -32,7 +32,7 @@ const AboutSection: React.FC = () => {
   return (
     <section ref={sectionRef} id="about" className="relative py-32 px-6 md:px-20 bg-nord0 overflow-hidden">
       {/* Fog Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40 flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0 top-0 left-0 pointer-events-none opacity-10 flex items-center justify-center overflow-hidden">
         <img
           ref={bgRef}
           src="/images/backgrounds/fog.webp"
@@ -41,6 +41,17 @@ const AboutSection: React.FC = () => {
           loading="lazy"
           decoding="async"
           className="w-[1500px] max-w-[150vw] h-[900px] max-h-[150vh] object-contain"
+        />
+      </div>
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-10 flex items-center justify-center overflow-hidden">
+        <img
+          ref={bgRef}
+          src="/images/backgrounds/fog.webp"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="w-[1200px] max-w-[120vw] h-[700px] max-h-[125vh] object-contain"
         />
       </div>
 
@@ -56,8 +67,8 @@ const AboutSection: React.FC = () => {
           <div className="min-w-0 order-2 sm:order-1">
             <div className="space-y-6 text-nord4/80 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
               <p>
-                Developer, musician, and dog father with <b>16+</b> years shipping software —
-                from PHP monoliths to React frontends and DevOps pipelines.
+                Developer, musician, and dog father with <b>16+</b> years of experience
+                in technology, from PHP monoliths to React frontends and DevOps pipelines.
               </p>
               <p>
                 Based in Brazil, currently studying Information Security at SENAC.

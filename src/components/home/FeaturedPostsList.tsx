@@ -25,7 +25,7 @@ const FeaturedPostsList: React.FC<FeaturedPostsListProps> = ({ posts }) => {
           <Link
             key={post.id}
             to={`/blog/${post.id}`}
-            className="group flex gap-5 items-start p-5 rounded-xl bg-nord1 border border-nord3/30 hover:bg-nord2 hover:border-nord8/30 transition-all"
+            className="group flex gap-5 items-start p-5 rounded-xl bg-nord1 border border-nord3/30 hover:bg-nord2 hover:border-nord8/30 transition-colors"
           >
             {/* Thumbnail */}
             {post.image_url && (
@@ -33,7 +33,7 @@ const FeaturedPostsList: React.FC<FeaturedPostsListProps> = ({ posts }) => {
                 <img
                   src={post.image_url}
                   alt={post.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-filter duration-500"
                 />
               </div>
             )}
@@ -54,7 +54,7 @@ const FeaturedPostsList: React.FC<FeaturedPostsListProps> = ({ posts }) => {
 
       <Link
         to="/blog"
-        className="inline-flex items-center gap-2 mt-8 text-xs font-black uppercase tracking-widest text-nord8 hover:gap-4 transition-all"
+        className="inline-flex items-center gap-2 mt-8 text-xs font-black uppercase tracking-widest text-nord8 hover:gap-4 transition-[gap]"
       >
         See all featured
         <span className="material-symbols-outlined text-sm">east</span>

@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
                 href={to}
                 onClick={(e) => handleAnchorClick(e, to)}
                 className={`
-                  font-headline font-medium tracking-tight text-sm transition-all duration-300
+                  font-headline font-medium tracking-tight text-sm transition-colors duration-300
                   ${isActive
                     ? 'text-nord8 font-bold border-b border-nord8 pb-0.5'
                     : 'text-nord4/80 hover:text-nord13'}

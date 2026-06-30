@@ -26,14 +26,14 @@ const TimelineSection: React.FC = () => {
             <div className="hidden md:flex gap-2">
               <button
                 onClick={() => scroll('left')}
-                className="w-12 h-12 rounded-full border border-nord3/40 flex items-center justify-center text-nord4 hover:bg-nord3/20 hover:text-nord8 transition-all"
+                className="w-12 h-12 rounded-full border border-nord3/40 flex items-center justify-center text-nord4 hover:bg-nord3/20 hover:text-nord8 transition-colors"
                 aria-label="Scroll left"
               >
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
               <button
                 onClick={() => scroll('right')}
-                className="w-12 h-12 rounded-full border border-nord3/40 flex items-center justify-center text-nord4 hover:bg-nord3/20 hover:text-nord8 transition-all"
+                className="w-12 h-12 rounded-full border border-nord3/40 flex items-center justify-center text-nord4 hover:bg-nord3/20 hover:text-nord8 transition-colors"
                 aria-label="Scroll right"
               >
                 <span className="material-symbols-outlined">chevron_right</span>
@@ -42,7 +42,7 @@ const TimelineSection: React.FC = () => {
 
             <Link
               to="/timeline"
-              className="inline-flex items-center gap-3 bg-nord8 text-nord0 px-6 py-3 rounded-full font-black uppercase tracking-widest text-xs hover:bg-nord9 hover:gap-5 transition-all w-fit"
+              className="inline-flex items-center gap-3 bg-nord8 text-nord0 px-6 py-3 rounded-full font-black uppercase tracking-widest text-xs hover:bg-nord9 hover:gap-5 transition-[colors,gap] w-fit"
             >
               Complete Timeline
               <span className="material-symbols-outlined text-sm">arrow_right_alt</span>

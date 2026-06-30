@@ -35,7 +35,7 @@ const CareerSection: React.FC = () => {
                   key={company.company}
                   onClick={() => select(company)}
                   className={[
-                    'flex flex-col gap-1 px-4 py-3 rounded-sm text-left whitespace-nowrap transition-all border',
+                    'flex flex-col gap-1 px-4 py-3 rounded-sm text-left whitespace-nowrap transition-colors border',
                     isActive
                       ? 'bg-nord1 border-nord8'
                       : 'border-nord3/40 hover:border-nord8/40',
@@ -69,7 +69,7 @@ const CareerSection: React.FC = () => {
                   onClick={() => select(company)}
                   onMouseEnter={() => select(company)}
                   className={[
-                    'w-full text-left px-6 py-5 border-b border-nord3/20 last:border-b-0 transition-all duration-150 cursor-pointer group',
+                    'w-full text-left px-6 py-5 border-b border-nord3/20 last:border-b-0 transition-colors duration-150 cursor-pointer group',
                     isActive
                       ? 'bg-nord1/80 border-l-2 border-l-nord8'
                       : 'hover:bg-nord1/40 border-l-2 border-l-transparent',

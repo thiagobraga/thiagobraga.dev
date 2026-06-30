@@ -113,7 +113,7 @@ const MusicSection: React.FC = () => {
               </p>
               {/* Progress bar */}
               <div className="h-1 bg-nord3 rounded-full overflow-hidden">
-                <div className={`${album.progress} h-full bg-nord13 rounded-full transition-all duration-700`} />
+                <div className={`${album.progress} h-full bg-nord13 rounded-full transition-[width] duration-700`} />
               </div>
               <div className="flex justify-between mt-3 text-[10px] font-label text-nord4/75 uppercase font-bold">
                 <span>{album.progressTime}</span>
@@ -155,11 +155,11 @@ const MusicSection: React.FC = () => {
                 id={`music-album-${i}`}
                 onClick={() => setActiveIdx(i)}
                 className={`
-                  flex flex-col items-center gap-3 shrink-0 w-36 group transition-all
+                  flex flex-col items-center gap-3 shrink-0 w-36 group transition-opacity
                   ${i === activeIdx ? 'opacity-100' : 'opacity-50 hover:opacity-80'}
                 `}
               >
-                <div className={`w-36 h-36 rounded-xl overflow-hidden border-2 transition-all ${i === activeIdx ? 'border-nord13 shadow-lg shadow-nord13/20' : 'border-transparent'}`}>
+                <div className={`w-36 h-36 rounded-xl overflow-hidden border-2 transition-[colors,box-shadow] ${i === activeIdx ? 'border-nord13 shadow-lg shadow-nord13/20' : 'border-transparent'}`}>
                   <picture>
                     {a.imageWebp && <source srcSet={a.imageWebp} type="image/webp" />}
                     <img src={a.image} alt={a.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />

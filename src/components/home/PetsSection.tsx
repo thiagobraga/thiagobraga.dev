@@ -57,7 +57,7 @@ const PetsSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {PETS.slice(0, 6).map(({ name, image, alt }) => (
             <div key={name} className="group relative w-full aspect-4/5 rounded-2xl overflow-hidden shadow-xl border border-nord3/30">
-              <img src={image} alt={alt} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-1000" />
+              <img src={image} alt={alt} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-filter duration-1000" />
               <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-nord0/90 to-transparent" />
               <p className="absolute bottom-5 left-0 right-0 text-center font-headline text-2xl font-bold text-nord6 drop-shadow-lg">{name}</p>
             </div>

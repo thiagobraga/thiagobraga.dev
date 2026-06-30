@@ -38,7 +38,7 @@ const RecentPostsList: React.FC<RecentPostsListProps> = ({ posts }) => {
           <li key={post.id}>
             <Link
               to={`/blog/${post.id}`}
-              className="group flex items-baseline gap-5 py-4 hover:bg-nord1/40 px-3 -mx-3 rounded-lg transition-all"
+              className="group flex items-baseline gap-5 py-4 hover:bg-nord1/40 px-3 -mx-3 rounded-lg transition-colors"
             >
               {/* Date */}
               <span className="shrink-0 font-label text-xs text-nord4/70 font-bold w-20 text-right">
@@ -62,7 +62,7 @@ const RecentPostsList: React.FC<RecentPostsListProps> = ({ posts }) => {
 
       <Link
         to="/blog"
-        className="inline-flex items-center gap-2 mt-8 text-xs font-black uppercase tracking-widest text-nord8 hover:gap-4 transition-all"
+        className="inline-flex items-center gap-2 mt-8 text-xs font-black uppercase tracking-widest text-nord8 hover:gap-4 transition-[gap]"
       >
         See all posts
         <span className="material-symbols-outlined text-sm">east</span>
