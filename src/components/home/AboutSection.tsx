@@ -108,13 +108,16 @@ const AboutSection: React.FC = () => {
           <div className="w-full order-1 sm:order-2">
             <div className="relative group">
               <div className="h-72 sm:h-96 md:h-[41rem] rounded-2xl md:rounded-3xl overflow-hidden border border-nord3/30 shadow-xl relative z-10">
-                <img
-                  src="/images/people/thiagobraga-hero-section.webp"
-                  alt="Thiago Braga - Software Engineer"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover saturate-50 contrast-100 ease-in-out hover:saturate-90 hover:transition duration-1500"
-                />
+                <picture>
+                  <source srcSet="/images/people/thiagobraga-hero-section.webp" type="image/webp" />
+                  <img
+                    src="/images/people/thiagobraga-hero-section.jpg"
+                    alt="Thiago Braga - Software Engineer"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover saturate-50 contrast-100 ease-in-out hover:saturate-90 hover:transition duration-1500"
+                  />
+                </picture>
               </div>
             </div>
           </div>
