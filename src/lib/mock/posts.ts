@@ -16,7 +16,7 @@ export const mockRecentPosts: Post[] = [
     excerpt: 'How machine learning models are beginning to predict deployment failures before they happen, reshaping how teams ship software.',
     category: 'DevOps',
     published_at: '2026-03-26T00:00:00Z',
-    image_url: '/images/project-sentinel.png',
+    image_url: '/images/projects/project-sentinel.png',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const mockRecentPosts: Post[] = [
     excerpt: 'Preparing our architecture for the quantum leap. Why you should care about lattice-based crypto today.',
     category: 'Security',
     published_at: '2026-03-12T00:00:00Z',
-    image_url: '/images/project-nexus.png',
+    image_url: '/images/projects/project-nexus.png',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const mockRecentPosts: Post[] = [
     excerpt: 'Exploring memory safety and the psychological impact of zero-cost abstractions on developer velocity.',
     category: 'Dev',
     published_at: '2026-02-28T00:00:00Z',
-    image_url: '/images/project-sonic.png',
+    image_url: '/images/projects/project-sonic.png',
   },
   {
     id: 4,
@@ -96,7 +96,7 @@ export const mockFeaturedPosts: Post[] = [
     excerpt: 'Pod Security Admission, network policies, RBAC audits, and supply chain integrity — the complete guide.',
     category: 'Security',
     published_at: '2026-03-01T00:00:00Z',
-    image_url: '/images/project-sentinel.png',
+    image_url: '/images/projects/project-sentinel.png',
     featured: true,
   },
   {
@@ -105,7 +105,7 @@ export const mockFeaturedPosts: Post[] = [
     excerpt: 'From bare metal to production-grade Kubernetes — the architecture decisions that changed how I think about infrastructure.',
     category: 'DevOps',
     published_at: '2026-01-05T00:00:00Z',
-    image_url: '/images/project-nexus.png',
+    image_url: '/images/projects/project-nexus.png',
     featured: true,
   },
 ];

@@ -42,21 +42,22 @@ const BlogSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* ── Section header ── */}
-        <h2 className="font-headline text-4xl font-bold mb-16 text-center text-nord6">
+        <h2 className="font-mono text-5xl md:text-7xl font-extrabold tracking-tighter text-nord6 mb-16">
           <code className="section-heading-code">
-            GET <b>/posts</b>
+            <span className="opacity-70 font-light">GET</span> <b>/posts</b>
+            <br/>
           </code>
         </h2>
 
         {/* ── Stitch-style top 3 cards ── */}
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-24">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-nord1 rounded-2xl border border-nord3/30 p-8 animate-pulse h-64" />
+              <div key={i} className={`bg-nord1 rounded-2xl border border-nord3/30 p-8 animate-pulse ${i === 1 ? 'sm:row-span-2' : ''} h-48`} />
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
             {topCards.map((post, idx) => {
               const hoverColor = CARD_HOVER_COLORS[post.category] ?? 'group-hover:text-nord8';
               const readMoreColor = READ_MORE_COLORS[post.category] ?? 'hover:text-nord8';
@@ -64,7 +65,10 @@ const BlogSection: React.FC = () => {
               return (
                 <div
                   key={post.id}
-                  className="group bg-nord1 rounded-2xl border border-nord3/30 p-8 hover:bg-nord2 transition-all"
+                  className={[
+                    'group bg-nord1 rounded-2xl border border-nord3/30 p-8 hover:bg-nord2 transition-all',
+                    idx === 0 ? 'sm:row-span-2 lg:row-span-1' : '',
+                  ].join(' ')}
                 >
                   <div className="flex justify-between items-center mb-10">
                     <span className={`text-[10px] font-bold uppercase tracking-widest ${categoryColor}`}>
@@ -94,7 +98,7 @@ const BlogSection: React.FC = () => {
         )}
 
         {/* ── Extended split view: Recent + Featured ── */}
-        <div className="mt-8 pt-16 border-t border-nord3/20">
+        <div className="mt-8 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             {/* Recent Posts (left) */}
             <RecentPostsList posts={recentPosts} />

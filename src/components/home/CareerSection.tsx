@@ -21,15 +21,46 @@ const CareerSection: React.FC = () => {
         {/* Heading */}
         <h2 className="font-mono text-5xl md:text-7xl font-extrabold tracking-tighter text-nord6 mb-16">
           <code className="section-heading-code">
-            <span className="opacity-50 font-light">tail -f</span> <b>career</b>
+            <span className="opacity-50 font-light">tail</span> <b>career</b>
           </code>
         </h2>
 
-        {/* Two-panel layout */}
-        <div className="flex flex-col lg:flex-row gap-0 lg:gap-0 border border-nord3/30 rounded-sm overflow-hidden">
+        {/* Mobile/tablet: horizontal scrollable pill nav */}
+        <div className="lg:hidden overflow-x-auto pb-2 mb-4 -mx-6 px-6 scrollbar-hide [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex gap-2 w-max">
+            {TIMELINE_DATA.map((company) => {
+              const isActive = selected.company === company.company;
+              return (
+                <button
+                  key={company.company}
+                  onClick={() => select(company)}
+                  className={[
+                    'flex flex-col gap-1 px-4 py-3 rounded-sm text-left whitespace-nowrap transition-all border',
+                    isActive
+                      ? 'bg-nord1 border-nord8'
+                      : 'border-nord3/40 hover:border-nord8/40',
+                  ].join(' ')}
+                >
+                  <span className={[
+                    'text-xs font-mono font-bold',
+                    isActive ? 'text-nord8' : 'text-nord4/50',
+                  ].join(' ')}>
+                    {company.company}
+                  </span>
+                  <span className="text-[10px] font-mono text-nord4/40">
+                    {company.startDate} · {company.endDate}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-          {/* Left: company list */}
-          <div className="lg:w-2/5 border-b lg:border-b-0 lg:border-r border-nord3/30">
+        {/* Two-panel layout */}
+        <div className="flex flex-col lg:flex-row border border-nord3/30 rounded-sm overflow-hidden">
+
+          {/* Left: company list — desktop only */}
+          <div className="hidden lg:block lg:w-2/5 border-r border-nord3/30">
             {TIMELINE_DATA.map((company) => {
               const isActive = selected.company === company.company;
               return (
@@ -85,7 +116,7 @@ const CareerSection: React.FC = () => {
                   <div key={idx}>
                     {/* Role title + dates */}
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
-                      <h4 className="font-headline font-bold text-nord8 text-base">
+                      <h4 className="font-headline font-bold text-nord13 text-base">
                         {role.title}
                       </h4>
                       <span className="font-mono text-[11px] text-nord4/50">
@@ -101,9 +132,9 @@ const CareerSection: React.FC = () => {
                     {/* Descriptions */}
                     <ul className="space-y-1.5 mb-4">
                       {role.description.map((line, i) => (
-                        <li key={i} className="flex gap-3 text-sm text-nord4/80 leading-relaxed">
-                          <span className="font-mono text-nord3 mt-0.5 shrink-0">›</span>
-                          <span>{line}</span>
+                        <li key={i} className="flex items-start gap-3 text-xs text-nord4/80 leading-relaxed">
+                          <span className="font-mono text-nord3 leading-relaxed shrink-0">›</span>
+                          <span className="font-mono">{line}</span>
                         </li>
                       ))}
                     </ul>

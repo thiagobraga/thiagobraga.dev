@@ -13,30 +13,30 @@ interface Album {
 
 const ALBUMS: Album[] = [
   {
-    title: 'Octavarium',
-    artist: 'Dream Theater',
-    genre: 'Progressive Metal',
-    image: '/images/Dream_Theater_Octavarium.jpg',
-    tracks: ['The Root of All Evil', 'The Answer Lies Within', 'These Walls'],
-    duration: '95:02',
-    progress: 'w-3/5',
-    progressTime: '54:21',
-  },
-  {
     title: 'Immutable',
     artist: 'Meshuggah',
     genre: 'Djent / Progressive Metal',
-    image: '/images/Meshuggah_Immutable.jpg',
+    image: '/images/listen/Meshuggah_Immutable.jpg',
     tracks: ['Broken Cog', 'The Abysmal Eye', 'Light the Shortening Fuse'],
     duration: '56:03',
     progress: 'w-1/3',
     progressTime: '18:41',
   },
   {
+    title: 'Octavarium',
+    artist: 'Dream Theater',
+    genre: 'Progressive Metal',
+    image: '/images/listen/Dream_Theater_Octavarium.jpg',
+    tracks: ['The Root of All Evil', 'The Answer Lies Within', 'These Walls'],
+    duration: '95:02',
+    progress: 'w-3/5',
+    progressTime: '54:21',
+  },
+  {
     title: 'Ghost Reveries',
     artist: 'Opeth',
     genre: 'Progressive Death Metal',
-    image: '/images/Opeth_Ghost_Reveries.jpg',
+    image: '/images/listen/Opeth_Ghost_Reveries.jpg',
     tracks: ['Ghost of Perdition', 'The Baying of the Hounds', 'Beneath the Mire'],
     duration: '67:05',
     progress: 'w-1/2',
@@ -46,7 +46,7 @@ const ALBUMS: Album[] = [
     title: 'Physical Graffiti',
     artist: 'Led Zeppelin',
     genre: 'Hard Rock / Blues Rock',
-    image: '/images/Led_Zeppelin_Physical_Graffiti.jpg',
+    image: '/images/listen/Led_Zeppelin_Physical_Graffiti.jpg',
     tracks: ['Custard Pie', 'The Rover', 'In My Time of Dying'],
     duration: '82:45',
     progress: 'w-2/3',
@@ -56,7 +56,7 @@ const ALBUMS: Album[] = [
     title: 'Fear of a Blank Planet',
     artist: 'Porcupine Tree',
     genre: 'Progressive Rock',
-    image: '/images/Porcupine-Tree-Fear-of-A-Blank-Planet.webp',
+    image: '/images/listen/Porcupine-Tree-Fear-of-A-Blank-Planet.webp',
     tracks: ['Fear of a Blank Planet', 'My Ashes', 'Anesthetize'],
     duration: '51:21',
     progress: 'w-1/4',
@@ -69,28 +69,28 @@ const MusicSection: React.FC = () => {
   const album = ALBUMS[activeIdx];
 
   return (
-    <section id="music" className="py-32 bg-nord1 relative overflow-hidden border-y border-nord3/20">
-      <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
+    <section id="music" className="py-32 px-6 md:px-20 bg-nord1 relative overflow-hidden border-y border-nord3/20">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex items-center gap-5 mb-16">
-          <h2 className="font-headline text-4xl font-bold text-nord6">
-            <code className="section-heading-code">--listen</code>
+          <h2 className="font-mono text-5xl md:text-7xl tracking-tighter text-nord6">
+            <code className="section-heading-code">
+              <span className="opacity-70 font-light">--listen</span>
+            </code>
           </h2>
         </div>
 
         <div className="flex flex-col md:flex-row gap-16 items-start">
           {/* Album Art */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 shrink-0">
+          <div className="relative size-72 max-w-full md:size-[32rem] shrink-0">
             <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-nord3/30">
               <img
                 src={album.image}
                 alt={`${album.title} — ${album.artist}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-            </div>
-            {/* Play badge */}
-            <div className="absolute -bottom-4 -right-4 bg-nord0 p-4 rounded-full border border-nord13 shadow-xl">
-              <span className="material-symbols-outlined text-nord13 text-xl">play_arrow</span>
             </div>
           </div>
 
@@ -140,25 +140,24 @@ const MusicSection: React.FC = () => {
           <span className="font-label text-xs uppercase tracking-[0.4em] text-nord3 font-black block mb-8">
             Current Rotation
           </span>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex gap-6 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
             {ALBUMS.map((a, i) => (
               <button
                 key={a.title}
                 id={`music-album-${i}`}
                 onClick={() => setActiveIdx(i)}
                 className={`
-                  flex items-center gap-3 px-5 py-3 rounded-full border text-sm font-label font-bold transition-all
-                  ${i === activeIdx
-                    ? 'bg-nord13/20 border-nord13/50 text-nord13'
-                    : 'border-nord3/30 text-nord4/60 hover:border-nord8/40 hover:text-nord8'}
+                  flex flex-col items-center gap-3 shrink-0 w-36 group transition-all
+                  ${i === activeIdx ? 'opacity-100' : 'opacity-50 hover:opacity-80'}
                 `}
               >
-                <div className="w-6 h-6 rounded overflow-hidden shrink-0">
-                  <img src={a.image} alt={a.title} className="w-full h-full object-cover" />
+                <div className={`w-36 h-36 rounded-xl overflow-hidden border-2 transition-all ${i === activeIdx ? 'border-nord13 shadow-lg shadow-nord13/20' : 'border-transparent'}`}>
+                  <img src={a.image} alt={a.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
-                <span>{a.artist}</span>
-                <span className="opacity-60">—</span>
-                <span>{a.title}</span>
+                <div className="text-center">
+                  <p className={`text-xs font-label font-bold truncate w-full ${i === activeIdx ? 'text-nord13' : 'text-nord4/70'}`}>{a.artist}</p>
+                  <p className="text-[10px] font-label text-nord4/40 truncate w-full">{a.title}</p>
+                </div>
               </button>
             ))}
           </div>
