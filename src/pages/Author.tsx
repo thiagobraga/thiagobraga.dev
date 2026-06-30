@@ -9,7 +9,7 @@ const authors = {
   "1": {
     id: "1",
     name: "Thiago <strong>Braga</strong>",
-    avatar: "/images/avatar.png",
+    avatar: "/images/people/avatar.png",
     bio: "SRE Engineer with over 10 years of experience in building and maintaining large-scale infrastructure. Passionate about automation, cloud architecture, and DevOps culture.",
     position: "SRE Engineer at Scaffold Education",
     location: "Brazil",
