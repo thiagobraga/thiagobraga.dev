@@ -11,6 +11,6 @@ sh -c "$(wget -qO- get.chezmoi.io/lb)"
 
 # Initialize chezmoi with dotfiles
 echo "Initializing chezmoi with dotfiles..."
-chezmoi init --apply thiagobraga/dotfiles -S ~/project/dotfiles
+chezmoi init --apply thiagobraga/dotfiles -S /p/projects/dotfiles
 
 echo "Installation complete!"

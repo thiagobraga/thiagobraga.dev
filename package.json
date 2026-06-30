@@ -1,14 +1,20 @@
 {
-  "name": "thiagobraga-dev",
+  "name": "thiagobraga.dev",
   "private": true,
   "version": "0.0.0",
+  "description": "A premium personal portfolio and blog built with React, TypeScript, and [Nord](https://www.nordtheme.com) design system. Features glassmorphism UI, smooth scroll animations, and modular architecture for performance and visual excellence.",
   "type": "module",
   "packageManager": "bun@1.2.6",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagobraga/thiagobraga.dev.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "screenshot:fullpage": "scripts/capture-fullpage-screenshot.sh",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",

@@ -2,13 +2,12 @@ name: thiagobraga
 
 services:
   app:
-    container_name: thiagobraga-app
     build:
       context: .
       dockerfile: .docker/Dockerfile
       target: development
-    pull_policy: if_not_present
-    volumes: [.:/app, /app/node_modules, /app/dist]
+    container_name: thiagobraga-app
+    volumes: [.:/app]
     networks: [proxy]
     environment:
       NODE_ENV: development
