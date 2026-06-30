@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Github, Instagram, Linkedin, type LucideIcon } from 'lucide-react';
 
 interface Social {
@@ -83,6 +83,16 @@ const StackOverflowIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const Footer: React.FC = () => {
+  const { pathname } = useLocation();
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (to.startsWith('/#') && pathname === '/') {
+      e.preventDefault();
+      const id = to.slice(2);
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="relative pt-24 pb-12 px-8 border-t border-nord1 shadow-[0_-40px_120px_rgba(0,0,0,0.28)] overflow-hidden">
       <img
@@ -135,13 +145,14 @@ const Footer: React.FC = () => {
             </h2>
             <div className="mt-5 grid grid-cols-2 gap-x-8 gap-y-3 md:grid-cols-1">
               {SITE_LINKS.map(({ label, to }) => (
-                <Link
+                <a
                   key={label}
-                  to={to}
+                  href={to}
+                  onClick={(e) => handleAnchorClick(e, to)}
                   className="font-label text-xs font-bold uppercase tracking-[0.22em] text-nord4/75 transition-colors hover:text-nord13"
                 >
                   {label}
-                </Link>
+                </a>
               ))}
             </div>
           </nav>
