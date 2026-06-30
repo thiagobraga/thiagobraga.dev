@@ -109,9 +109,9 @@ const AboutSection: React.FC = () => {
             <div className="relative group">
               <div className="h-72 sm:h-96 md:h-[41rem] rounded-2xl md:rounded-3xl overflow-hidden border border-nord3/30 shadow-xl relative z-10">
                 <picture>
-                  <source srcSet="/images/people/thiagobraga-hero-section.webp" type="image/webp" />
+                  <source srcSet="/images/people/thiagobraga-hero-section-v2.webp" type="image/webp" />
                   <img
-                    src="/images/people/thiagobraga-hero-section.jpg"
+                    src="/images/people/thiagobraga-hero-section-v2.jpg"
                     alt="Thiago Braga - Software Engineer"
                     loading="lazy"
                     decoding="async"
