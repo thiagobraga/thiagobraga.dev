@@ -23,8 +23,8 @@ const NORD_PALETTE = [
 
 const FONTS = [
   { name: 'Plus Jakarta Sans', role: 'Headlines / Display', className: 'font-headline', sample: 'The quick brown fox jumps' },
-  { name: 'Inter', role: 'Body / Prose', className: 'font-body', sample: 'The quick brown fox jumps over the lazy dog.' },
-  { name: 'Manrope', role: 'Labels / UI / Caps', className: 'font-label', sample: 'UPPERCASE LABEL · small caps ui text' },
+  { name: 'Plus Jakarta Sans', role: 'Body / Prose', className: 'font-body', sample: 'The quick brown fox jumps over the lazy dog.' },
+  { name: 'Plus Jakarta Sans', role: 'Labels / UI / Caps', className: 'font-label', sample: 'UPPERCASE LABEL · small caps ui text' },
 ];
 
 const Section: React.FC<{ title: string; subtitle?: string; children: React.ReactNode }> = ({ title, subtitle, children }) => (

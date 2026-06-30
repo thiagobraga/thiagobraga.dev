@@ -39,10 +39,10 @@
 
   /* Font System */
   --font-headline: "Plus Jakarta Sans", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Manrope", sans-serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-mono: "Source Code Pro", "Google Sans Code", monospace;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
   --font-playfair: "Playfair Display", serif;
 
   /* shadcn/ui tokens (CSS variables) */
@@ -186,7 +186,7 @@
   body {
     background-color: #2E3440;  /* nord0 */
     color: #ECEFF4;             /* nord6 */
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -307,14 +307,6 @@
   }
 }
 
-/* Mobile: full viewport width, no border-radius */
-@media (max-width: 767px) {
-  .project-card-row .project-card-shell {
-    margin-left: -1.5rem;
-    width: 100vw;
-    border-radius: 0;
-  }
-}
 
 
 /* Custom scrollbar─ */
