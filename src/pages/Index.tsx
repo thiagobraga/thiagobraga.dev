@@ -3,8 +3,6 @@ import HeroSection from '@/components/home/HeroSection';
 import AboutSection from '@/components/home/AboutSection';
 import ProjectsSection from '@/components/home/ProjectsSection';
 import CareerSection from '@/components/home/CareerSection';
-import BlogSection from '@/components/home/BlogSection';
-import MusicSection from '@/components/home/MusicSection';
 import PetsSection from '@/components/home/PetsSection';
 
 const SkillsSection = lazy(() => import('@/components/home/SkillsSection'));
@@ -62,8 +60,6 @@ const IndexPage: React.FC = () => {
         <SkillsSection />
       </DeferredSection>
       <CareerSection />
-      <MusicSection />
-      <BlogSection />
       <PetsSection />
     </>
   );

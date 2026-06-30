@@ -45,9 +45,7 @@ const SITE_LINKS = [
   { label: 'Home',     to: '/#hero' },
   { label: 'About',    to: '/#about' },
   { label: 'Projects', to: '/#projects' },
-  { label: 'Music',    to: '/#music' },
   { label: 'Pets',     to: '/#pets' },
-  { label: 'Career',   to: '/timeline' },
 ];
 
 const ReactLogo: React.FC = () => (
