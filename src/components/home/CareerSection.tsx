@@ -43,11 +43,11 @@ const CareerSection: React.FC = () => {
                 >
                   <span className={[
                     'text-xs font-mono font-bold',
-                    isActive ? 'text-nord8' : 'text-nord4/50',
+                    isActive ? 'text-nord8' : 'text-nord4/75',
                   ].join(' ')}>
                     {company.company}
                   </span>
-                  <span className="text-[10px] font-mono text-nord4/40">
+                  <span className="text-[10px] font-mono text-nord4/70">
                     {company.startDate} · {company.endDate}
                   </span>
                 </button>
@@ -81,10 +81,10 @@ const CareerSection: React.FC = () => {
                   ].join(' ')}>
                     {company.company}
                   </span>
-                  <span className="block font-mono text-[11px] text-nord4/50">
+                  <span className="block font-mono text-[11px] text-nord4/75">
                     {company.startDate} · {company.endDate}
                   </span>
-                  <span className="block font-mono text-[11px] text-nord4/40 mt-0.5">
+                  <span className="block font-mono text-[11px] text-nord4/70 mt-0.5">
                     {company.roles.map(r => r.title).join(' · ')}
                   </span>
                 </button>
@@ -105,7 +105,7 @@ const CareerSection: React.FC = () => {
                 <h3 className="font-headline text-2xl font-bold text-nord6 mb-1">
                   {selected.company}
                 </h3>
-                <span className="font-mono text-[11px] text-nord8/60 uppercase tracking-widest">
+                <span className="font-mono text-[11px] text-nord8/90 uppercase tracking-widest">
                   {selected.startDate} — {selected.endDate}
                 </span>
               </div>
@@ -119,11 +119,11 @@ const CareerSection: React.FC = () => {
                       <h4 className="font-headline font-bold text-nord13 text-base">
                         {role.title}
                       </h4>
-                      <span className="font-mono text-[11px] text-nord4/50">
+                      <span className="font-mono text-[11px] text-nord4/75">
                         {role.startDate} – {role.endDate}
                       </span>
                       {role.location && (
-                        <span className="font-mono text-[11px] text-nord4/40">
+                        <span className="font-mono text-[11px] text-nord4/70">
                           {role.location}
                         </span>
                       )}

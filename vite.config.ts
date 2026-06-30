@@ -16,6 +16,20 @@ export default defineConfig({
     setupFiles: ["./src/test/setup.ts"],
     globals: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('node_modules')) {
+            if (id.includes('gsap')) return 'gsap';
+            if (id.includes('lenis')) return 'lenis';
+            if (id.includes('react-router')) return 'router';
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
   server: {
     allowedHosts: true,
     host: "0.0.0.0",

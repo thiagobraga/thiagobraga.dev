@@ -141,7 +141,7 @@ const SkillsSection: React.FC = () => {
         <div className="grid grid-cols-1 gap-x-32 gap-y-6 sm:grid-cols-2 xl:grid-cols-3 skills-group">
           {SKILL_GROUPS.map(({ title, skills }) => (
             <div key={title} className="py-6 skill-group">
-              <h4 className="mb-4 pb-3 border-b border-nord3/30 text-[11px] font-black uppercase tracking-[0.32em] text-nord4/50">
+              <h4 className="mb-4 pb-3 border-b border-nord3/30 text-[11px] font-black uppercase tracking-[0.32em] text-nord4/75">
                 {title}
               </h4>
               <div className="grid grid-cols-1 gap-1">

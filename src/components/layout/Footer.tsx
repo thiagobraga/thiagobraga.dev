@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label={label}
                   title={label}
-                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-nord3/40 bg-nord0/40 text-nord4/60 transition-all hover:-translate-y-1"
+                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-nord3/40 bg-nord0/40 text-nord4/80 transition-all hover:-translate-y-1"
                   style={{
                     '--hover-color': hoverColor,
                     '--hover-bg': hoverBg,
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                 <Link
                   key={label}
                   to={to}
-                  className="font-label text-xs font-bold uppercase tracking-[0.22em] text-nord4/50 transition-colors hover:text-nord13"
+                  className="font-label text-xs font-bold uppercase tracking-[0.22em] text-nord4/75 transition-colors hover:text-nord13"
                 >
                   {label}
                 </Link>
@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
               href="https://www.oracle.com/cloud/free/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex font-label text-[10px] font-black uppercase tracking-[0.28em] text-nord4/50 transition-colors hover:text-nord13"
+              className="mt-6 inline-flex font-label text-[10px] font-black uppercase tracking-[0.28em] text-nord4/75 transition-colors hover:text-nord13"
             >
               Always-Free OCI
             </a>

@@ -348,11 +348,13 @@ const ProjectsSection: React.FC = () => {
     <section id="projects" className="relative py-48 px-6 md:px-20 bg-nord0 overflow-x-clip">
       <div className="absolute top-0 left-0 w-full pointer-events-none select-none flex flex-col gap-48">
         <img
-          src="/images/backgrounds/projects-bg1-optimized.png"
+          src="/images/backgrounds/projects-bg1.webp"
           alt=""
           aria-hidden="true"
           loading="lazy"
           decoding="async"
+          width={1456}
+          height={816}
           className="w-full"
           style={{
             opacity: 0.04,
@@ -361,11 +363,13 @@ const ProjectsSection: React.FC = () => {
           }}
         />
         <img
-          src="/images/backgrounds/projects-bg2-optimized.png"
+          src="/images/backgrounds/projects-bg2.webp"
           alt=""
           aria-hidden="true"
           loading="lazy"
           decoding="async"
+          width={1456}
+          height={816}
           className="w-full"
           style={{
             opacity: 0.04,

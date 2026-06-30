@@ -107,7 +107,7 @@ const MusicSection: React.FC = () => {
               <div className="h-1 bg-nord3 rounded-full overflow-hidden">
                 <div className={`${album.progress} h-full bg-nord13 rounded-full transition-all duration-700`} />
               </div>
-              <div className="flex justify-between mt-3 text-[10px] font-label text-nord4/50 uppercase font-bold">
+              <div className="flex justify-between mt-3 text-[10px] font-label text-nord4/75 uppercase font-bold">
                 <span>{album.progressTime}</span>
                 <span>{album.duration}</span>
               </div>
@@ -121,12 +121,12 @@ const MusicSection: React.FC = () => {
                   className="flex items-center justify-between p-4 rounded-lg bg-nord0/40 border border-nord3/20 hover:bg-nord0/60 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-5">
-                    <span className="text-nord4/40 font-label text-sm font-bold">
+                    <span className="text-nord4/70 font-label text-sm font-bold">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <span className="font-headline font-semibold text-nord6 text-sm">{track}</span>
                   </div>
-                  <span className="material-symbols-outlined text-nord4/40 group-hover:text-nord13 transition-colors">
+                  <span className="material-symbols-outlined text-nord4/70 group-hover:text-nord13 transition-colors">
                     more_vert
                   </span>
                 </div>
@@ -156,7 +156,7 @@ const MusicSection: React.FC = () => {
                 </div>
                 <div className="text-center">
                   <p className={`text-xs font-label font-bold truncate w-full ${i === activeIdx ? 'text-nord13' : 'text-nord4/70'}`}>{a.artist}</p>
-                  <p className="text-[10px] font-label text-nord4/40 truncate w-full">{a.title}</p>
+                  <p className="text-[10px] font-label text-nord4/70 truncate w-full">{a.title}</p>
                 </div>
               </button>
             ))}

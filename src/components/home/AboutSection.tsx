@@ -35,7 +35,7 @@ const AboutSection: React.FC = () => {
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40 flex items-center justify-center overflow-hidden">
         <img
           ref={bgRef}
-          src="/images/backgrounds/fog.png"
+          src="/images/backgrounds/fog.webp"
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -109,7 +109,7 @@ const AboutSection: React.FC = () => {
             <div className="relative group">
               <div className="h-72 sm:h-96 md:h-[41rem] rounded-2xl md:rounded-3xl overflow-hidden border border-nord3/30 shadow-xl relative z-10">
                 <img
-                  src="/images/people/thiagobraga-hero-section.jpg"
+                  src="/images/people/thiagobraga-hero-section.webp"
                   alt="Thiago Braga - Software Engineer"
                   loading="lazy"
                   decoding="async"

@@ -74,7 +74,7 @@ const BlogSection: React.FC = () => {
                     <span className={`text-[10px] font-bold uppercase tracking-widest ${categoryColor}`}>
                       {post.category}
                     </span>
-                    <span className="font-label text-xs text-nord4/50">
+                    <span className="font-label text-xs text-nord4/75">
                       {formatShortDate(post.published_at)}
                     </span>
                   </div>

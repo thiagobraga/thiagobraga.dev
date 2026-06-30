@@ -233,7 +233,7 @@ const HeroSection: React.FC = () => {
         <div
           ref={heroBgRef}
           className="absolute -top-[15%] -bottom-[15%] inset-x-0 bg-no-repeat bg-cover bg-center grayscale contrast-125 brightness-50"
-          style={{ backgroundImage: "url('/images/backgrounds/misty-forest.png')" }}
+          style={{ backgroundImage: "url('/images/backgrounds/misty-forest.webp')" }}
         />
         <div
           className="absolute inset-0"
