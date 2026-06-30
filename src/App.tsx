@@ -16,9 +16,9 @@ import Dashboard from "./pages/admin/Dashboard";
 import PostEditor from "./pages/admin/PostEditor";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import { ReactLenis } from 'lenis/react';
+import { ReactLenis, useLenis } from 'lenis/react';
 import 'lenis/dist/lenis.css';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -45,28 +45,33 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => (
   </main>
 );
 
-const App = () => {
-  const lenisRef = useRef<any>(null);
+const LenisScrollTriggerSync = () => {
+  const lenis = useLenis();
 
   useEffect(() => {
-    function update(time: number) {
-      lenisRef.current?.lenis?.raf(time * 1000);
+    if (!lenis) {
+      return;
     }
 
-    gsap.ticker.add(update);
+    lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      gsap.ticker.remove(update);
+      lenis.off('scroll', ScrollTrigger.update);
     };
-  }, []);
+  }, [lenis]);
 
+  return null;
+};
+
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactLenis root ref={lenisRef} autoRaf={false} options={{
-        duration: 2,
+      <ReactLenis root options={{
+        duration: 0.9,
         easing: (t: number) => Math.min(1, 1.01 - Math.pow(2, -10 * t))
       }}>
+      <LenisScrollTriggerSync />
       <ThemeProvider>
         <TooltipProvider>
           <Toaster />
@@ -165,7 +170,7 @@ const App = () => {
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>
-    </ReactLenis>
+      </ReactLenis>
   </QueryClientProvider>
   );
 };
