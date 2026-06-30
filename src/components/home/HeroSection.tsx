@@ -239,13 +239,13 @@ const HeroSection: React.FC = () => {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(180deg, rgba(46,52,64,0.45) 0%, rgba(46,52,64,0.45) 24%, rgba(46,52,64,0.47) 38%, rgba(46,52,64,0.52) 52%, rgba(46,52,64,0.62) 66%, rgba(46,52,64,0.76) 78%, rgba(46,52,64,0.9) 90%, #2e3440 100%)',
+              'linear-gradient(180deg, rgba(46,52,64,0) 0%, rgba(46,52,64,0.08) 15%, rgba(46,52,64,0.22) 28%, rgba(46,52,64,0.38) 40%, rgba(46,52,64,0.5) 50%, rgba(46,52,64,0.62) 60%, rgba(46,52,64,0.72) 72%, rgba(46,52,64,0.85) 85%, #2e3440 100%)',
           }}
         />
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl animate-fade-up">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl">
         {/* Name */}
         <h1
           className="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter mb-4"
