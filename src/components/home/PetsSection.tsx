@@ -3,37 +3,37 @@ import React from 'react';
 const PETS = [
   {
     name: 'Meg',
-    image: '/images/pets/meg.jpg',
+    image: '/images/pets/meg.webp',
     alt: 'Meg the dog',
   },
   {
     name: 'Lucy',
-    image: '/images/pets/lucy.jpg',
+    image: '/images/pets/lucy.webp',
     alt: 'Lucy in a close portrait with a white coat',
   },
   {
     name: 'Kali',
-    image: '/images/pets/kali.jpg',
+    image: '/images/pets/kali.webp',
     alt: 'Kali sleeping on a wooden floor',
   },
   {
     name: 'Snoopy',
-    image: '/images/pets/snoopy.jpg',
+    image: '/images/pets/snoopy.webp',
     alt: 'Snoopy on a balcony looking back over the shoulder',
   },
   {
     name: 'Lila',
-    image: '/images/pets/lila.jpg',
+    image: '/images/pets/lila.webp',
     alt: 'Lila resting in warm sunlight on the floor',
   },
   {
     name: 'Luke',
-    image: '/images/pets/luke.png',
+    image: '/images/pets/luke.webp',
     alt: 'Luke resting on the floor in the sunlight',
   },
   // {
   //   name: 'Chico',
-  //   image: '/images/pets/chico.jpg',
+  //   image: '/images/pets/chico.webp',
   //   alt: 'Chico standing on a balcony and looking sideways',
   // },
 ];
@@ -49,7 +49,7 @@ const PetsSection: React.FC = () => {
               <b>healthcheck</b>
             </code>
           </h2>
-          <p className="max-w-xl text-nord4/60 leading-relaxed border-l-2 border-nord10 pl-6">
+          <p className="max-w-xl text-nord4/75 leading-relaxed border-l-2 border-nord10 pl-6">
             This is the backend to ensure 100% emotional availability.
           </p>
         </div>

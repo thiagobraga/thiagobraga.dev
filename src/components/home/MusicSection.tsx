@@ -5,6 +5,7 @@ interface Album {
   artist: string;
   genre: string;
   image: string;
+  imageWebp?: string;
   tracks: string[];
   duration: string;
   progress: string; // as Tailwind w-* fraction, e.g. "w-2/3"
@@ -17,6 +18,7 @@ const ALBUMS: Album[] = [
     artist: 'Meshuggah',
     genre: 'Djent / Progressive Metal',
     image: '/images/listen/Meshuggah_Immutable.jpg',
+    imageWebp: '/images/listen/Meshuggah_Immutable.webp',
     tracks: ['Broken Cog', 'The Abysmal Eye', 'Light the Shortening Fuse'],
     duration: '56:03',
     progress: 'w-1/3',
@@ -27,6 +29,7 @@ const ALBUMS: Album[] = [
     artist: 'Dream Theater',
     genre: 'Progressive Metal',
     image: '/images/listen/Dream_Theater_Octavarium.jpg',
+    imageWebp: '/images/listen/Dream_Theater_Octavarium.webp',
     tracks: ['The Root of All Evil', 'The Answer Lies Within', 'These Walls'],
     duration: '95:02',
     progress: 'w-3/5',
@@ -37,6 +40,7 @@ const ALBUMS: Album[] = [
     artist: 'Opeth',
     genre: 'Progressive Death Metal',
     image: '/images/listen/Opeth_Ghost_Reveries.jpg',
+    imageWebp: '/images/listen/Opeth_Ghost_Reveries.webp',
     tracks: ['Ghost of Perdition', 'The Baying of the Hounds', 'Beneath the Mire'],
     duration: '67:05',
     progress: 'w-1/2',
@@ -47,6 +51,7 @@ const ALBUMS: Album[] = [
     artist: 'Led Zeppelin',
     genre: 'Hard Rock / Blues Rock',
     image: '/images/listen/Led_Zeppelin_Physical_Graffiti.jpg',
+    imageWebp: '/images/listen/Led_Zeppelin_Physical_Graffiti.webp',
     tracks: ['Custard Pie', 'The Rover', 'In My Time of Dying'],
     duration: '82:45',
     progress: 'w-2/3',
@@ -84,13 +89,16 @@ const MusicSection: React.FC = () => {
           {/* Album Art */}
           <div className="relative size-72 max-w-full md:size-[32rem] shrink-0">
             <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-nord3/30">
-              <img
-                src={album.image}
-                alt={`${album.title} — ${album.artist}`}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
+              <picture>
+                {album.imageWebp && <source srcSet={album.imageWebp} type="image/webp" />}
+                <img
+                  src={album.image}
+                  alt={`${album.title} — ${album.artist}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </picture>
             </div>
           </div>
 
@@ -152,7 +160,10 @@ const MusicSection: React.FC = () => {
                 `}
               >
                 <div className={`w-36 h-36 rounded-xl overflow-hidden border-2 transition-all ${i === activeIdx ? 'border-nord13 shadow-lg shadow-nord13/20' : 'border-transparent'}`}>
-                  <img src={a.image} alt={a.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  <picture>
+                    {a.imageWebp && <source srcSet={a.imageWebp} type="image/webp" />}
+                    <img src={a.image} alt={a.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  </picture>
                 </div>
                 <div className="text-center">
                   <p className={`text-xs font-label font-bold truncate w-full ${i === activeIdx ? 'text-nord13' : 'text-nord4/70'}`}>{a.artist}</p>

@@ -80,7 +80,7 @@ const TimelineSection: React.FC = () => {
                   {company.roles.map((role, idx) => (
                     <div key={idx} className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-nord4 before:rounded-full before:opacity-50">
                       <h4 className="font-bold text-nord4 text-lg mb-1">{role.title}</h4>
-                      <span className="text-sm text-nord4/60 font-medium">
+                      <span className="text-sm text-nord4/75 font-medium">
                         {role.startDate} - {role.endDate} · {role.duration}
                       </span>
                     </div>

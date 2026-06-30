@@ -41,7 +41,7 @@ const RecentPostsList: React.FC<RecentPostsListProps> = ({ posts }) => {
               className="group flex items-baseline gap-5 py-4 hover:bg-nord1/40 px-3 -mx-3 rounded-lg transition-all"
             >
               {/* Date */}
-              <span className="shrink-0 font-label text-xs text-nord4/40 font-bold w-20 text-right">
+              <span className="shrink-0 font-label text-xs text-nord4/70 font-bold w-20 text-right">
                 {formatDate(post.published_at)}
               </span>
               {/* Title */}

@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative pt-24 pb-12 px-8 border-t border-nord1 shadow-[0_-40px_120px_rgba(0,0,0,0.28)] overflow-hidden">
       <img
-        src="/images/backgrounds/wood-texture.jpg"
+        src="/images/backgrounds/wood-texture.webp"
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -179,7 +179,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="mt-16 text-center">
-          <p className="font-body text-[10px] uppercase tracking-[0.3em] text-nord4/35 font-bold">
+          <p className="font-body text-[10px] uppercase tracking-[0.3em] text-nord4/70 font-bold">
             © {new Date().getFullYear()} thiagobraga.dev. Built with love, inspiration, coffee, and AI.
           </p>
         </div>

@@ -44,7 +44,7 @@ const FeaturedPostsList: React.FC<FeaturedPostsListProps> = ({ posts }) => {
               <h4 className="font-headline font-semibold text-nord6 text-sm leading-snug mt-1 group-hover:text-nord8 transition-colors line-clamp-2">
                 {post.title}
               </h4>
-              <p className="text-nord4/60 text-xs mt-2 line-clamp-2 leading-relaxed">
+              <p className="text-nord4/75 text-xs mt-2 line-clamp-2 leading-relaxed">
                 {post.excerpt}
               </p>
             </div>
