@@ -10,71 +10,38 @@ concurrency:
   group: deploy-production
   cancel-in-progress: false
 
-# Least privilege at the top; jobs narrow further.
 permissions:
   contents: read
 
-env:
-  IMAGE: ghcr.io/${{ github.repository_owner }}/thiagobraga.dev
-
 jobs:
-  build-and-push:
-    name: Build & push image to GHCR
+  build-and-deploy:
+    name: Build & deploy to OCI
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write # push to GHCR via the built-in GITHUB_TOKEN
-    outputs:
-      image_lc: ${{ steps.meta.outputs.image_lc }}
+    environment: production
     steps:
       - name: Checkout
         uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
 
-      - name: Lowercase image name
-        id: meta
-        run: echo "image_lc=${IMAGE,,}" >> "$GITHUB_OUTPUT"
-
-      - name: Set up Buildx
-        uses: docker/setup-buildx-action@f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca # v3.9.0
-
-      - name: Log in to GHCR
-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a # v2.1.0
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          bun-version: latest
 
-      - name: Build & push
-        uses: docker/build-push-action@f9f3042f7e2789586610d6e8b85c8f03e5195baf # v7.2.0
-        with:
-          context: .
-          file: .docker/Dockerfile
-          target: production
-          push: true
-          tags: |
-            ${{ steps.meta.outputs.image_lc }}:latest
-            ${{ steps.meta.outputs.image_lc }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
-  deploy:
-    name: Deploy to OCI
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    environment: production # gate with required reviewers in repo settings
-    permissions:
-      contents: read # no packages scope needed here
-    steps:
-      - name: SSH deploy
-        uses: appleboy/ssh-action@d91a1af6f57cd4478ceee14d7705601dafabaa19 # v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          fingerprint: ${{ secrets.SSH_KNOWN_HOSTS }} # host-key verification; never disable strict checking
-          script: |
-            set -euo pipefail
-            cd /home/deploy/app
-            docker compose -f compose.prod.yml pull
-            docker compose -f compose.prod.yml up -d
-            docker image prune -f
+      - name: Build
+        run: bun run build
+
+      - name: Setup SSH
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Deploy dist to server
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes" \
+            dist/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/p/projects/thiagobraga.dev/dist/
