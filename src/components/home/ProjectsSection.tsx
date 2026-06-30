@@ -17,6 +17,12 @@ interface Project {
   hidden?: boolean;
 }
 
+const IMAGE_POSITION_CLASSES: Record<NonNullable<Project['imagePosition']>, string> = {
+  top: 'object-top',
+  center: 'object-center',
+  bottom: 'object-bottom',
+};
+
 const PROJECTS: Project[] = [
   {
     title: 'ABNT Maker',
@@ -184,6 +190,7 @@ const ProjectImageCarousel: React.FC<{ images: string[]; title: string; imagePos
   const [index, setIndex] = React.useState(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const imgWrapRef = React.useRef<HTMLDivElement>(null);
+  const imagePositionClass = IMAGE_POSITION_CLASSES[imagePosition];
 
   React.useEffect(() => {
     if (images.length <= 1) return;
@@ -208,7 +215,7 @@ const ProjectImageCarousel: React.FC<{ images: string[]; title: string; imagePos
             alt={`${title} - slide ${idx}`}
             loading="lazy"
             decoding="async"
-            className={`carousel-slide-img absolute inset-0 w-full h-full object-cover object-${imagePosition}
+            className={`carousel-slide-img absolute inset-0 w-full h-full object-cover ${imagePositionClass}
               transition-opacity duration-1000 ease-in-out ${idx === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           />
