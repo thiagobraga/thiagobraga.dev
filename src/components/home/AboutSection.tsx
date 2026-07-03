@@ -1,33 +1,34 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useRef } from 'react';
+// TEMP: gsap/ScrollTrigger disabled for perf testing
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLImageElement>(null);
 
-  useLayoutEffect(() => {
-    if (!bgRef.current || !sectionRef.current) return;
-
-    const tween = gsap.fromTo(
-      bgRef.current,
-      { xPercent: -4 },
-      {
-        xPercent: 4,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
-      }
-    );
-
-    return () => { tween.scrollTrigger?.kill(); tween.kill(); };
-  }, []);
+  // useLayoutEffect(() => {
+  //   if (!bgRef.current || !sectionRef.current) return;
+  //
+  //   const tween = gsap.fromTo(
+  //     bgRef.current,
+  //     { xPercent: -4 },
+  //     {
+  //       xPercent: 4,
+  //       ease: 'none',
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: 'top bottom',
+  //         end: 'bottom top',
+  //         scrub: true,
+  //       },
+  //     }
+  //   );
+  //
+  //   return () => { tween.scrollTrigger?.kill(); tween.kill(); };
+  // }, []);
 
   return (
     <section ref={sectionRef} id="about" className="relative py-32 px-6 md:px-20 bg-nord0 overflow-hidden">
@@ -67,8 +68,10 @@ const AboutSection: React.FC = () => {
           <div className="min-w-0 order-2 sm:order-1">
             <div className="space-y-6 text-nord4/80 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
               <p>
-                Developer, musician, and dog father with <b>16+</b> years of experience
-                in technology, from PHP monoliths to React frontends and DevOps pipelines.
+                Developer, musician, and pet parent. I have been working in the IT industry
+                for <b>16</b> years. I have advanced experience in web development, software
+                engineering, and DevOps. I have worked with a wide range of technologies and
+                frameworks, from PHP monoliths to React frontends and DevOps pipelines.
               </p>
               <p>
                 Based in Brazil, currently studying Information Security at SENAC.

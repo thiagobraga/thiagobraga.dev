@@ -1,8 +1,9 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useRef } from 'react';
+// TEMP: gsap/ScrollTrigger disabled for perf testing
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
   title: string;
@@ -328,39 +329,40 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 const ProjectsSection: React.FC = () => {
   const projectListRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    const context = gsap.context(() => {
-      const cards = gsap.utils.toArray<HTMLElement>('.project-card-shell');
-
-      cards.forEach((card) => {
-        const entersFromRight = card.classList.contains('project-card-shell--from-right');
-
-        gsap.set(card, {
-          autoAlpha: 0,
-          force3D: true,
-          x: entersFromRight ? 220 : -220,
-        });
-
-        gsap.to(card, {
-          autoAlpha: 1,
-          clearProps: 'transform,opacity,visibility',
-          duration: 0.68,
-          ease: 'power3.out',
-          overwrite: 'auto',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 84%',
-            once: true,
-          },
-          x: 0,
-        });
-      });
-
-      ScrollTrigger.refresh();
-    }, projectListRef);
-
-    return () => context.revert();
-  }, []);
+  // TEMP: card reveal animation disabled for perf testing
+  // useLayoutEffect(() => {
+  //   const context = gsap.context(() => {
+  //     const cards = gsap.utils.toArray<HTMLElement>('.project-card-shell');
+  //
+  //     cards.forEach((card) => {
+  //       const entersFromRight = card.classList.contains('project-card-shell--from-right');
+  //
+  //       gsap.set(card, {
+  //         autoAlpha: 0,
+  //         force3D: true,
+  //         x: entersFromRight ? 220 : -220,
+  //       });
+  //
+  //       gsap.to(card, {
+  //         autoAlpha: 1,
+  //         clearProps: 'transform,opacity,visibility',
+  //         duration: 0.68,
+  //         ease: 'power3.out',
+  //         overwrite: 'auto',
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: 'top 84%',
+  //           once: true,
+  //         },
+  //         x: 0,
+  //       });
+  //     });
+  //
+  //     ScrollTrigger.refresh();
+  //   }, projectListRef);
+  //
+  //   return () => context.revert();
+  // }, []);
 
   return (
     <section id="projects" className="relative py-48 px-6 md:px-20 bg-nord0 overflow-x-clip">

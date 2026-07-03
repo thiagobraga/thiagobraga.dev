@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { useLenis } from 'lenis/react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+// TEMP: gsap/ScrollTrigger disabled for perf testing
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 interface Group {
   key: string;
@@ -15,7 +15,12 @@ const GROUPS: Group[] = [
   {
     key: 'musician',
     color: 'text-nord7',
-    items: ['Creative Musician', 'Musician', 'Guitarist', 'Music Composer'],
+    items: [
+      'Musician',
+      'Creative Musician',
+      'Guitarist',
+      'Music Composer'
+    ],
   },
   {
     key: 'developer',
@@ -35,12 +40,20 @@ const GROUPS: Group[] = [
   {
     key: 'petLover',
     color: 'text-nord13',
-    items: ['Dog Lover', 'Dog & Cat Lover', 'Pet Lover', 'Pet Parent'],
+    items: [
+      'Pet Parent',
+      'Dog Lover',
+      'Dog & Cat Lover',
+      'Pet Lover',
+    ],
   },
   {
     key: 'cybersecurity',
     color: 'text-nord12',
-    items: ['CyberSecurity Student', 'CyberSecurity Enthusiast'],
+    items: [
+      'CyberSecurity Student',
+      'CyberSecurity Enthusiast'
+    ],
   },
 ];
 
@@ -85,7 +98,7 @@ function findDiff(oldText: string, newText: string) {
 }
 
 function randomPause() {
-  return 3000 + Math.random() * 2000;
+  return 4000 + Math.random() * 2000;
 }
 
 const HeroSection: React.FC = () => {
@@ -103,24 +116,34 @@ const HeroSection: React.FC = () => {
   const heroBgRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  useLayoutEffect(() => {
-    if (!heroBgRef.current || !sectionRef.current) return;
-    const tween = gsap.fromTo(
-      heroBgRef.current,
-      { y: 0 },
-      {
-        y: -200,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      }
-    );
-    return () => { tween.scrollTrigger?.kill(); tween.kill(); };
-  }, []);
+  // TEMP: parallax disabled for perf testing
+  // useEffect(() => {
+  //   if (!heroBgRef.current || !sectionRef.current) return;
+  //   let tween: gsap.core.Tween | undefined;
+  //   // Deferred one frame so ScrollTrigger's initial layout measurement
+  //   // (getBoundingClientRect) happens after first paint, not during it.
+  //   const raf = requestAnimationFrame(() => {
+  //     tween = gsap.fromTo(
+  //       heroBgRef.current,
+  //       { y: 0 },
+  //       {
+  //         y: -200,
+  //         ease: 'none',
+  //         scrollTrigger: {
+  //           trigger: sectionRef.current,
+  //           start: 'top top',
+  //           end: 'bottom top',
+  //           scrub: true,
+  //         },
+  //       }
+  //     );
+  //   });
+  //   return () => {
+  //     cancelAnimationFrame(raf);
+  //     tween?.scrollTrigger?.kill();
+  //     tween?.kill();
+  //   };
+  // }, []);
 
   useEffect(() => {
     const blink = setInterval(() => setShowCursor((v) => !v), 530);
@@ -232,14 +255,16 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div
           ref={heroBgRef}
-          className="absolute -top-[15%] -bottom-[15%] inset-x-0 bg-no-repeat bg-cover bg-center grayscale contrast-125 brightness-50"
+          className="absolute blur-sm -top-[15%] -bottom-[15%] inset-x-0 bg-no-repeat bg-cover bg-center grayscale contrast-125 brightness-50"
           style={{ backgroundImage: "url('/images/backgrounds/misty-forest.webp')" }}
         />
         <div
-          className="absolute inset-0"
+          className="absolute top-[50%] left-[50%] inset-0"
           style={{
-            backgroundImage:
-              'linear-gradient(rgba(46, 52, 64, 0) 0%, rgba(46, 52, 64, 0) 70%, rgba(46, 52, 64, 0.15) 75%, rgba(46, 52, 64, 0.35) 80%, rgba(46, 52, 64, 0.55) 85%, rgba(46, 52, 64, 0.75) 90%, rgba(46, 52, 64, 0.9) 95%, rgb(46, 52, 64) 100%)',
+            background: `
+              rgba(255, 255, 255, 0.0)
+              linear-gradient(180deg, #00000000, #2e3540)
+              repeat scroll 0% 0%`,
           }}
         />
       </div>
@@ -254,7 +279,7 @@ const HeroSection: React.FC = () => {
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            lineHeight: 1.5,
+            lineHeight: 1.3,
             textShadow: '1px 1px 0 rgb(0 0 0 / 7%)',
           }}
         >

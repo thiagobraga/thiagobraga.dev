@@ -16,13 +16,14 @@ import Dashboard from "./pages/admin/Dashboard";
 import PostEditor from "./pages/admin/PostEditor";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import { ReactLenis, useLenis } from 'lenis/react';
-import 'lenis/dist/lenis.css';
-import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// TEMP: scroll/animation libs disabled for perf testing — see LenisScrollTriggerSync below
+// import { ReactLenis, useLenis } from 'lenis/react';
+// import 'lenis/dist/lenis.css';
+// import { useEffect } from 'react';
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const queryClient = new QueryClient();
 
@@ -45,33 +46,33 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => (
   </main>
 );
 
-const LenisScrollTriggerSync = () => {
-  const lenis = useLenis();
-
-  useEffect(() => {
-    if (!lenis) {
-      return;
-    }
-
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.lagSmoothing(0);
-
-    return () => {
-      lenis.off('scroll', ScrollTrigger.update);
-    };
-  }, [lenis]);
-
-  return null;
-};
+// const LenisScrollTriggerSync = () => {
+//   const lenis = useLenis();
+//
+//   useEffect(() => {
+//     if (!lenis) {
+//       return;
+//     }
+//
+//     lenis.on('scroll', ScrollTrigger.update);
+//     gsap.ticker.lagSmoothing(0);
+//
+//     return () => {
+//       lenis.off('scroll', ScrollTrigger.update);
+//     };
+//   }, [lenis]);
+//
+//   return null;
+// };
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactLenis root options={{
+      {/* <ReactLenis root options={{
         duration: 0.9,
         easing: (t: number) => Math.min(1, 1.01 - Math.pow(2, -10 * t))
-      }}>
-      <LenisScrollTriggerSync />
+      }}> */}
+      {/* <LenisScrollTriggerSync /> */}
       <ThemeProvider>
         <TooltipProvider>
           <Toaster />
@@ -170,7 +171,7 @@ const App = () => {
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>
-      </ReactLenis>
+      {/* </ReactLenis> */}
   </QueryClientProvider>
   );
 };
