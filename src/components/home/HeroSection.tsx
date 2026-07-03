@@ -259,12 +259,9 @@ const HeroSection: React.FC = () => {
           style={{ backgroundImage: "url('/images/backgrounds/misty-forest.webp')" }}
         />
         <div
-          className="absolute top-[50%] left-[50%] inset-0"
+          className="absolute top-[35%] inset-0"
           style={{
-            background: `
-              rgba(255, 255, 255, 0.0)
-              linear-gradient(180deg, #00000000, #2e3540)
-              repeat scroll 0% 0%`,
+            backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(46, 52, 64, 1))',
           }}
         />
       </div>
